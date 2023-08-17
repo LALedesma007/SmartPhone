@@ -1,0 +1,45 @@
+.containerFooter{
+  background-color: #170D42;
+  color: white;
+  padding-top: 15px;
+  color: #00AFEF;
+}
+
+.logoFooter{
+  width: 120px;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.logoRedes{
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+  color: #00AFEF;
+}
+
+.redesLogos {
+  color: #00AFEF;
+
+}
+
+
+.tipografRedes{
+  display: flex;
+  justify-content: center;
+  margin-bottom: 15px;
+  
+}
+
+.linkFooter{
+  text-decoration: none;
+  color: #00AFEF;
+}
+
+.copyryghtFooter{
+  text-align: center;
+  padding-bottom: 15px;
+}
+ 
