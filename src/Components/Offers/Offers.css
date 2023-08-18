@@ -1,0 +1,91 @@
+/* -----------Title----------- */
+
+.css-qywfm8-MuiDivider-wrapper{
+  font-weight: bold;
+  color: #170D42;
+}
+
+.css-1r87cm-MuiDivider-root::after{
+  border-color: #170D42;
+  border: solid 1px;
+}
+ 
+.css-1r87cm-MuiDivider-root::before{
+  border-color: #170D42;
+  border: solid 1px;
+}
+
+/* -----------Carousel----------- */
+
+.carrusel{
+  margin-top: 20px;
+  background-color:#0D6EFD;  
+}
+
+.carruselItems{
+  display: flex;
+  align-items: center;
+  overflow-x:hidden;
+  overflow-y:hidden;
+  padding: 15px 20px;
+  
+}
+
+.carruselItem{
+  margin-left: 13px;
+  margin-right: 13px;
+  transition: transform 0.4s ease;
+}
+
+.carruselItem:hover{
+  transform: scale(1.1);
+}
+
+.ver{
+  display: flex;
+  overflow-x:visible;
+}
+
+.ver::-webkit-scrollbar{
+  background-color:#170D42;
+ 
+}
+
+.ver::-webkit-scrollbar-thumb{
+  background-color:#F5811e;
+  border-radius: 7px;
+}
+
+
+
+/* -----------Card----------- */
+
+.paperOffers{
+  display: flex;
+  grid-row: auto;
+  align-items: center;
+  width: 100%;
+  height: 150px;
+  gap: 1;
+  overflow: hidden;
+  margin-top: 2;
+  
+}
+
+.sxOffers{
+  flex-grow: 1;
+  display: grid;
+  gap: 1;
+}
+
+.typogra{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+}
+
+.styleaction{
+  padding-left: 6px;
+}
+
