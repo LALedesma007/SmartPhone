@@ -1,0 +1,64 @@
+h4.MuiTypography-root.MuiTypography-h4.titleLogin.css-5lbw0b-MuiTypography-root {
+  font-weight: bold; 
+  display: flex;
+  justify-content: center;
+  color:#170D42;
+}
+
+.formLogin{
+  margin-top: 5px;
+  width: 100%;
+}
+
+.alertas::before {
+  display: inline;
+  content: "⚠ ";
+}
+
+.alertas{
+  color: red;
+  font-size: small;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.titleLogin{
+  display: flex;
+  justify-content: center;
+}
+
+
+.css-480o17-MuiGrid-root {
+  display: flex;
+  justify-content: center;
+}
+
+.css-11lq3yg-MuiGrid-root{
+  display: flex;
+  justify-content: center;
+}
+
+.buttonLogin{
+  width: 100%;
+}
+
+.containerButton{
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.conteinerLogin{
+  margin: 10px;
+  padding: 10px;
+  background-color: white;
+  border-radius: 5px;
+}
+
+.boxContainerLogin{
+  background: url(../../../img/backgroundLoginII.png) no-repeat;
+  background-size: cover;
+}
+
+.prueba{
+  width: 100%;
+}
