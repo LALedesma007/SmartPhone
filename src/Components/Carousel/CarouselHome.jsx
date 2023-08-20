@@ -1,5 +1,5 @@
- import { useState } from 'react';
-import { Box, Button, Modal, Typography } from '@mui/material';
+import { useState } from 'react';
+import { Box, Button, Modal } from '@mui/material';
 import Carousel from 'react-material-ui-carousel'
 import slider from '../../helpers/slider.json'
 import './CarouselHome.css'
