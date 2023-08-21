@@ -55,8 +55,8 @@ h4.MuiTypography-root.MuiTypography-h4.titleLogin.css-5lbw0b-MuiTypography-root 
 }
 
 .boxContainerLogin{
-  background: url(../../../img/backgroundLoginII.png) no-repeat;
-  background-size: cover;
+  margin-top: 50px;
+  margin-bottom: 90px;
 }
 
 .prueba{

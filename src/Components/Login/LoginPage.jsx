@@ -77,12 +77,12 @@ const LoginPage = () => {
               </FormGroup>   
 
               <Box className='containerButton'>
-              <Button variant="contained" sx={{backgroundColor: '#F5811e'}} type="submit" onClick={handleSubmit(onSubmit)} className='buttonLogin'>
+              <Button variant="contained" sx={{backgroundColor: '#F5811e', marginTop:'20px'}} type="submit" onClick={handleSubmit(onSubmit)} className='buttonLogin'>
                 Ingresar
               </Button>
               </Box>
               <Box className='containerButton'> 
-              <Button variant="contained" sx={{backgroundColor: '#F5811e'}} type="submit"  href='/' className='buttonLogin'>
+              <Button variant="contained" sx={{backgroundColor: '#F5811e', marginTop:'10px'}} type="submit"  href='/' className='buttonLogin'>
                 Registrar
               </Button>
               </Box>

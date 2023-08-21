@@ -1,7 +1,10 @@
 .containerFooter{
+  display: flex;
+  flex-direction: column;
+  flex: 1;
   background-color: #170D42;
   color: white;
-  padding-top: 15px;
+  padding-top: 30px;
   color: #00AFEF;
 }
 
