@@ -9,6 +9,7 @@ import { useState } from "react"
 import { NavLink } from "react-router-dom";
 import LogoNavbar from '../../../img/LogoNavbar.png'
 import './Navbar.css'
+import CartItems from "../Cart/CartItems/CartItems";
 
 const Navbar = () => {
 
@@ -28,7 +29,7 @@ const Navbar = () => {
         id: 4, title: 'Registro', path: '/register', icon: <AppRegistrationIcon/>
       },
       {
-        id: 5, title: 'Carrito', path: '/ShoppingCart', 
+        id: 5, title: 'Carrito', path: '/Shopping' , icon: <CartItems/>
       }
     ]
   
