@@ -1,0 +1,46 @@
+h4.MuiTypography-root.MuiTypography-h4.titleRegister.css-5lbw0b-MuiTypography-root {
+  font-weight: bold; 
+  display: flex;
+  justify-content: center;
+  color:#170D42;
+}
+
+.formRegister{
+  margin-top: 5px;
+}
+
+.containerButton{
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.buttonRegister{
+  width: 100%;
+  
+}
+
+.conteinerRegister{
+  margin: 10px;
+  padding: 10px;
+  background-color: white;
+  border-radius: 5px;
+}
+
+.boxContainerRegister{
+  margin-top: 30px;
+  margin-bottom: 50px;
+}
+
+@media (max-width: 820px) {
+  .boxContainerRegister{
+    margin-top: 70px;
+    margin-bottom: 100px;
+  }
+}
+
+@media (max-width: 768px) {
+  .boxContainerRegister{
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+}
