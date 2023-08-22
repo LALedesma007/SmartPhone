@@ -1,5 +1,5 @@
 import { Box, Divider, Grid, ListItem, Typography } from '@mui/material';
-import Shopping from '../CartShopping/CartShopping';
+import CartShopping from '../CartShopping/CartShopping';
 import CartPrice from '../CartPrice/CartPrice';
 
 const CartContent = () => {
@@ -11,9 +11,9 @@ const CartContent = () => {
           <Divider textAlign="center">Mi Carrito</Divider>
         </Typography>
         
-        <ListItem style={{ justifyContent: "center" }}>
-          <img src='../../../img/celularPortada.png' />
-        </ListItem>
+        <Box display= 'flex' justifyContent= 'center' >
+          <img src='../../../img/CelularPortada.png'  style={{ maxWidth: "100%", height: "100%" }}/>
+        </Box>
       </Box>
     </Grid>
 
@@ -24,7 +24,7 @@ const CartContent = () => {
         </Typography>
       </Box>
       <Box margin={1}>
-        <Shopping/>
+        <CartShopping/>
         <CartPrice/>
       </Box>
     </Grid>
