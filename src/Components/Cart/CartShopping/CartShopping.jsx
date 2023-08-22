@@ -1,7 +1,6 @@
 import { Box, Button, Grid, Paper, Typography } from '@mui/material'
 import DeleteIcon from '@mui/icons-material/Delete';
 import CurrencyExchangeSharpIcon from '@mui/icons-material/CurrencyExchangeSharp';
-import React from 'react'
 import { dataContext } from '../../../context/DataContext';
 import { useContext } from 'react';
 import styled from '@emotion/styled';
@@ -15,8 +14,8 @@ const CartShopping = () => {
     
   
     const Img = styled('img')({
-      width: 110,
-      height: "20vh",
+      width: 100,
+      height: "15vh",
       objectPosition: 'center',
     })
   
@@ -83,28 +82,27 @@ const CartShopping = () => {
                           </Box>
                         </Grid>
                         <Grid item xs={12} sm={6} lg={2}>
-                          <Box className="sx" >
-                            <Typography variant="h6" marginLeft={'25px'} className="styleaction">{item.title}</Typography>
+                          <Box  display='flex' alignItems='center' height='100%' justifyContent='center'>
+                            <Typography variant="h6" className="styleaction">{item.title}</Typography>
                           </Box>
                         </Grid>
                         <Grid item xs={12} sm={6} lg={2}>
-                          <Box className="sx" >
-                            <Typography variant="h6" marginLeft={'25px'} className="styleaction">{item.model}</Typography>
-                            <Typography variant="h7" marginLeft={'25px'} className="styleaction">Product Description</Typography>
+                          <Box display='flex' alignItems='center' height='100%' justifyContent='center'>
+                            <Typography variant="h7" className="styleaction">{item.model}</Typography>
                           </Box>
                         </Grid>
                         <Grid item xs={12} sm={6} lg={2}>
-                          <Box sx={{ mr: 2 }}>
-                            <Typography variant="h5" color='primary' fontWeight="fontWeightBold" className="typogra"><CurrencyExchangeSharpIcon style={{ margin: '10px' }} />{item.price}</Typography>
+                          <Box display='flex' alignItems='center' height='100%' justifyContent='center'>
+                            <Typography variant="h5" color='primary' fontWeight="fontWeightBold" className="typogra"><CurrencyExchangeSharpIcon style={{ margin: '5px' }} />{item.price}</Typography>
                           </Box>
                         </Grid>
                         <Grid item xs={12} sm={6} lg={2}>
-                          <Box sx={{ mr: 2 }}>
+                          <Box sx={{ display: 'flex', justifyContent: 'center' }} display='flex' alignItems='center' height='100%'>
                             <CartCounter item={item} />
                           </Box>
                         </Grid>
-                        <Grid item xs={12} sm={6} lg={2}>
-                          <Box sx={{ mr: 2 }}>
+                        <Grid item xs={12} sm={6} lg={2} sx={{ marginBottom: { xs: 2 }, padding: {xs: 0.5} }}>
+                          <Box sx={{ display: 'flex', justifyContent: 'center' }} display='flex' alignItems='center' height='100%'>
                             <Button variant="contained" color="success" startIcon={<DeleteIcon />} onClick={()=>deleteGamer(item._id)}>Eliminar</Button>
                           </Box>
                         </Grid>
@@ -126,28 +124,27 @@ const CartShopping = () => {
                           </Box>
                         </Grid>
                         <Grid item xs={12} sm={6} lg={2}>
-                          <Box className="sx" >
-                            <Typography variant="h6" marginLeft={'25px'} className="styleaction">{item.title}</Typography>
+                          <Box display='flex' alignItems='center' height='100%' justifyContent='center'>
+                            <Typography variant="h6"  className="styleaction">{item.title}</Typography>
                           </Box>
                         </Grid>
                         <Grid item xs={12} sm={6} lg={2}>
-                          <Box className="sx" >
-                            <Typography variant="h6" marginLeft={'25px'} className="styleaction">{item.model}</Typography>
-                            <Typography variant="h7" marginLeft={'25px'} className="styleaction">Product Description</Typography>
+                          <Box display='flex' alignItems='center' height='100%' justifyContent='center'>
+                            <Typography variant="h7"  className="styleaction">{item.model}</Typography>
                           </Box>
                         </Grid>
                         <Grid item xs={12} sm={6} lg={2}>
-                          <Box sx={{ mr: 2 }}>
-                            <Typography variant="h5" color='primary' fontWeight="fontWeightBold" className="typogra"><CurrencyExchangeSharpIcon style={{ margin: '10px' }} />{item.price}</Typography>
+                          <Box display='flex' alignItems='center' height='100%' justifyContent='center'>
+                            <Typography variant="h5" color='primary' fontWeight="fontWeightBold" className="typogra"><CurrencyExchangeSharpIcon style={{ margin: '5px' }} />{item.price}</Typography>
                           </Box>
                         </Grid>
                         <Grid item xs={12} sm={6} lg={2}>
-                          <Box sx={{ mr: 2 }}>
+                          <Box display='flex' alignItems='center' height='100%' justifyContent='center'>
                             <CartCounter item={item}/>
                           </Box>
                         </Grid>
-                        <Grid item xs={12} sm={6} lg={2}>
-                          <Box sx={{ mr: 2 }}>
+                        <Grid item xs={12} sm={6} lg={2} sx={{ marginBottom: { xs: 2 }, padding: {xs: 0.5} }}>
+                          <Box display='flex' alignItems='center' height='100%' justifyContent='center'>
                             <Button variant="contained" color="success" startIcon={<DeleteIcon />} onClick={()=>deleteHeadset(item._id)}>Eliminar</Button>
                           </Box>
                         </Grid>
@@ -169,28 +166,27 @@ const CartShopping = () => {
                           </Box>
                         </Grid>
                         <Grid item xs={12} sm={6} lg={2}>
-                          <Box className="sx" >
-                            <Typography variant="h6" marginLeft={'25px'} className="styleaction">{item.title}</Typography>
+                          <Box display='flex' alignItems='center' height='100%' justifyContent='center' >
+                            <Typography variant="h6" className="styleaction">{item.title}</Typography>
                           </Box>
                         </Grid>
                         <Grid item xs={12} sm={6} lg={2}>
-                          <Box className="sx" >
-                            <Typography variant="h6" marginLeft={'25px'} className="styleaction">{item.model}</Typography>
-                            <Typography variant="h7" marginLeft={'25px'} className="styleaction">Product Description</Typography>
+                          <Box display='flex' alignItems='center' height='100%' justifyContent='center'>
+                            <Typography variant="h7" className="styleaction">{item.model}</Typography>
                           </Box>
                         </Grid>
                         <Grid item xs={12} sm={6} lg={2}>
-                          <Box sx={{ mr: 2 }}>
-                            <Typography variant="h5" color='primary' fontWeight="fontWeightBold" className="typogra"><CurrencyExchangeSharpIcon style={{ margin: '10px' }} />{item.price}</Typography>
+                          <Box  display='flex' alignItems='center' height='100%' justifyContent='center'>
+                            <Typography variant="h5" color='primary' fontWeight="fontWeightBold" className="typogra"><CurrencyExchangeSharpIcon style={{ margin: '5px' }} />{item.price}</Typography>
                           </Box>
                         </Grid>
                         <Grid item xs={12} sm={6} lg={2}>
-                          <Box sx={{ mr: 2 }}>
+                          <Box display='flex' alignItems='center' height='100%' justifyContent='center'>
                             <CartCounter item={item}/>
                           </Box>
                         </Grid>
-                        <Grid item xs={12} sm={6} lg={2}>
-                          <Box sx={{ mr: 2 }}>
+                        <Grid item xs={12} sm={6} lg={2} sx={{ marginBottom: { xs: 2 }, padding: {xs: 0.5} }}>
+                          <Box display='flex' alignItems='center' height='100%' justifyContent='center'>
                             <Button variant="contained" color="success" startIcon={<DeleteIcon />} onClick={()=>deletePhone(item._id)}>Eliminar</Button>
                           </Box>
                         </Grid>
@@ -212,28 +208,27 @@ const CartShopping = () => {
                           </Box>
                         </Grid>
                         <Grid item xs={12} sm={6} lg={2}>
-                          <Box className="sx" >
-                            <Typography variant="h6" marginLeft={'25px'} className="styleaction">{item.title}</Typography>
+                          <Box display='flex' alignItems='center' height='100%' justifyContent='center'>
+                            <Typography variant="h6" className="styleaction">{item.title}</Typography>
                           </Box>
                         </Grid>
                         <Grid item xs={12} sm={6} lg={2}>
-                          <Box className="sx" >
-                            <Typography variant="h6" marginLeft={'25px'} className="styleaction">{item.model}</Typography>
-                            <Typography variant="h7" marginLeft={'25px'} className="styleaction">Product Description</Typography>
+                          <Box display='flex' alignItems='center' height='100%' justifyContent='center'>
+                            <Typography variant="h7" className="styleaction">{item.model}</Typography>
                           </Box>
                         </Grid>
                         <Grid item xs={12} sm={6} lg={2}>
-                          <Box sx={{ mr: 2 }}>
-                            <Typography variant="h5" color='primary' fontWeight="fontWeightBold" className="typogra"><CurrencyExchangeSharpIcon style={{ margin: '10px' }} />{item.price}</Typography>
+                          <Box display='flex' alignItems='center' height='100%' justifyContent='center'>
+                            <Typography variant="h5" color='primary' fontWeight="fontWeightBold" className="typogra"><CurrencyExchangeSharpIcon style={{ margin: '5px' }} />{item.price}</Typography>
                           </Box>
                         </Grid>
                         <Grid item xs={12} sm={6} lg={2}>
-                          <Box sx={{ mr: 2 }}>
+                          <Box display='flex' alignItems='center' height='100%' justifyContent='center'>
                             <CartCounter item={item}/>
                           </Box>
                         </Grid>
-                        <Grid item xs={12} sm={6} lg={2}>
-                          <Box sx={{ mr: 2 }}>
+                        <Grid item xs={12} sm={6} lg={2} sx={{ marginBottom: { xs: 2 }, padding: {xs: 0.5} }}>
+                          <Box display='flex' alignItems='center' height='100%' justifyContent='center'>
                             <Button variant="contained" color="success" startIcon={<DeleteIcon />} onClick={()=>deleteRandom(item._id)}>Eliminar</Button>
                           </Box>
                         </Grid>
@@ -255,28 +250,27 @@ const CartShopping = () => {
                           </Box>
                         </Grid>
                         <Grid item xs={12} sm={6} lg={2}>
-                          <Box className="sx" >
-                            <Typography variant="h6" marginLeft={'25px'} className="styleaction">{item.title}</Typography>
+                          <Box display='flex' alignItems='center' height='100%' justifyContent='center'>
+                            <Typography variant="h6" className="styleaction">{item.title}</Typography>
                           </Box>
                         </Grid>
                         <Grid item xs={12} sm={6} lg={2}>
-                          <Box className="sx" >
-                            <Typography variant="h6" marginLeft={'25px'} className="styleaction">{item.model}</Typography>
-                            <Typography variant="h7" marginLeft={'25px'} className="styleaction">Product Description</Typography>
+                          <Box display='flex' alignItems='center' height='100%' justifyContent='center'>
+                            <Typography variant="h7" className="styleaction">{item.model}</Typography>
                           </Box>
                         </Grid>
                         <Grid item xs={12} sm={6} lg={2}>
-                          <Box sx={{ mr: 2 }}>
-                            <Typography variant="h5" color='primary' fontWeight="fontWeightBold" className="typogra"><CurrencyExchangeSharpIcon style={{ margin: '10px' }} />{item.price}</Typography>
+                          <Box display='flex' alignItems='center' height='100%' justifyContent='center'>
+                            <Typography variant="h5" color='primary' fontWeight="fontWeightBold" className="typogra"><CurrencyExchangeSharpIcon style={{ margin: '5px' }} />{item.price}</Typography>
                           </Box>
                         </Grid>
                         <Grid item xs={12} sm={6} lg={2}>
-                          <Box sx={{ mr: 2 }}>
+                          <Box display='flex' alignItems='center' height='100%' justifyContent='center'>
                             <CartCounter item={item}/>
                           </Box>
                         </Grid>
-                        <Grid item xs={12} sm={6} lg={2}>
-                          <Box sx={{ mr: 2 }}>
+                        <Grid item xs={12} sm={6} lg={2} sx={{ marginBottom: { xs: 2 }, padding: {xs: 0.5} }}>
+                          <Box display='flex' alignItems='center' height='100%' justifyContent='center'>
                             <Button variant="contained" color="success" startIcon={<DeleteIcon />} onClick={()=>deleteWatch(item._id)}>Eliminar</Button>
                           </Box>
                         </Grid>
