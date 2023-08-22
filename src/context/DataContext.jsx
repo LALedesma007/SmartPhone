@@ -15,6 +15,7 @@ const DataProvider = ({children}) => {
   const [cartwatch , SetCartWatch] = useState ([])
   const [cartrandom, Setcartrandom] = useState ([])
   const [dataOffer, SetdataOffer] = useState ([])
+  const [cartOffer, SetcartOffer] = useState ([])
 
   const getallproduct = async() =>{
     try {
@@ -43,7 +44,7 @@ const DataProvider = ({children}) => {
   }, [])
   
 
-  return <dataContext.Provider value={{ data, cartPhone, setCartPhone, cartheadset, setCartHeadset, cartgamer , SetCartGamer, cartwatch , SetCartWatch, cartrandom, Setcartrandom, dataOffer}}>{children}</dataContext.Provider>
+  return <dataContext.Provider value={{ data, cartPhone, setCartPhone, cartheadset, setCartHeadset, cartgamer , SetCartGamer, cartwatch , SetCartWatch, cartrandom, Setcartrandom, dataOffer, cartOffer, SetcartOffer}}>{children}</dataContext.Provider>
  
 }
 
