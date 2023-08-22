@@ -9,14 +9,8 @@ import './Offers.css'
 
 
 const Offers = () => {
-  const {dataOffer} = useContext(dataContext);
-  const [ offersproduct, SetOffersproduct ] = useState([])
-
-  useEffect(() => {
-    SetOffersproduct(dataOffer);
-  }, [dataOffer]);
-
-
+  const {dataOffer, cartOffer, SetcartOffer} = useContext(dataContext);
+ 
   const Img = styled('img')({
     width: 85,
     height: "19vh",
@@ -24,6 +18,12 @@ const Offers = () => {
     paddingTop:'15px',
     paddingBottom:'15px'
   })
+
+  const buyOffers = (item) => {
+    console.log(item);
+    SetcartOffer([...cartOffer, item])
+
+  }
 
   return (
     <div>
@@ -33,11 +33,11 @@ const Offers = () => {
     </Typography>
     </Box>
       {
-         offersproduct.length === 0 ? (<LinearProgress/>) : (
+         dataOffer.length === 0 ? (<LinearProgress/>) : (
           <Box className='carrusel'>
       <Box className='carruselItems ver'>
         {
-          offersproduct.map(item =>(
+          dataOffer.map(item =>(
             <Box key={item._id} className='carruselItem' >
               <Paper className="paperOffers">
                 <Img src={item.image}/>
@@ -45,7 +45,7 @@ const Offers = () => {
                   <Typography variant="h6" className="styleaction">{item.model}</Typography>
                   <Typography variant="h7" className="styleaction">Product Description</Typography>
                   <CardActions className="styleaction">
-                    <Button variant="contained" color='success' endIcon={<ShoppingCartIcon/>}>Comprar</Button>
+                    <Button variant="contained" color='success' endIcon={<ShoppingCartIcon/>} onClick={()=>buyOffers(item)}>Comprar</Button>
                   </CardActions>
                 </Box>
                 <Box sx={{ mr: 2}}>
