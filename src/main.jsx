@@ -7,13 +7,14 @@ import { CssBaseline } from '@mui/material'
 import DataProvider from './context/DataContext.jsx'
 
 
+
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <DataProvider>
-      <BrowserRouter>
-        <CssBaseline/>
-        <App />
-      </BrowserRouter>
-    </DataProvider>
+      <DataProvider>
+        <BrowserRouter>
+          <CssBaseline/>
+          <App />
+        </BrowserRouter>
+      </DataProvider>
   </React.StrictMode>,
 )

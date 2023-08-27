@@ -5,6 +5,7 @@ import RoofingIcon from '@mui/icons-material/Roofing';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import AppRegistrationIcon from '@mui/icons-material/AppRegistration';
 import PhoneIphoneIcon from '@mui/icons-material/PhoneIphone';
+import AdminPanelSettingsIcon from '@mui/icons-material/AdminPanelSettings';
 import { useState } from "react"
 import { NavLink } from "react-router-dom";
 import LogoNavbar from '../../../img/LogoNavbar.png'
@@ -30,6 +31,9 @@ const Navbar = () => {
       },
       {
         id: 5, title: 'Carrito', path: '/Shopping' , icon: <CartItems/>
+      },
+      {
+        id: 6, title: 'Administrador', path: '/Administrator' , icon: <AdminPanelSettingsIcon/>
       }
     ]
   
