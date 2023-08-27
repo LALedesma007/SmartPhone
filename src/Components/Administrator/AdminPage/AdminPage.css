@@ -1,0 +1,13 @@
+.boxCategory{
+    background-color: #F5811e;
+    height: auto;
+  }
+  
+  .imgCategory{
+    margin-top: 20px;
+  }
+  @media (max-width: 280px) {
+    .imgCategory{
+      width: 100%;
+    }
+  }
