@@ -85,53 +85,53 @@ const StyledTableCell = styled(TableCell)(({ theme }) => ({
       }, [successMessage]);
   
     return (
-    <form onSubmit={handleSubmit(onSubmit)}>
-      <TableContainer component={Paper}>
-      <Table sx={{ minWidth: 700 }} aria-label="customized table">
-        <TableHead>
-          <TableRow>
-            <StyledTableCell align='center'>Nombre</StyledTableCell>
-            <StyledTableCell align='center'>Apellido</StyledTableCell>
-            <StyledTableCell align='center'>Email</StyledTableCell>
-            <StyledTableCell align='center'>Usuario</StyledTableCell>
-            <StyledTableCell align='center'>Contraseña</StyledTableCell>
-            <StyledTableCell ></StyledTableCell>
-          </TableRow>
-        </TableHead>
-        <TableBody>
-          <StyledTableRow>
-            <StyledTableCell ><TextField id="outlined-basic" label="Nombre" variant="outlined" type="text" autoComplete='off'{...register("name", { required: true, minLength: 4, maxLength: 30, pattern: expressions.name })} />
-                  {errors.name?.type === 'required' && <Typography className='alert'>Campos vacios</Typography>}
-                  {errors.name?.type === 'minLength' && <Typography className='alert'>Minimo 4 caracteres</Typography>}
-                  {errors.name?.type === 'maxLength' && <Typography className='alert'>Maximo 30 caracteres</Typography>}
-            </StyledTableCell>
-            <StyledTableCell ><TextField id="outlined-basic" label="Apellido" variant="outlined" type="text" autoComplete='off' {...register("lastName", { required: true, minLength: 4, maxLength: 16, pattern: expressions.lastName })} />
-                  {errors.lastName?.type === 'required' && <Typography className='alert'>Campos vacios</Typography>}  
-                  {errors.lastName?.type === 'minLength' && <Typography className='alert'>Minimo 4 caracteres</Typography>}
-                  {errors.lastName?.type === 'maxLength' && <Typography className='alert'>Maximo 16 caracteres</Typography>}
-            </StyledTableCell>
-            <StyledTableCell className='email'><TextField id="outlined-basic" label="Email" variant="outlined" type="email" autoComplete='off' fullWidth {...register("email", { required: true, pattern: expressions.email })} />
-                  {errors.email?.type === 'required' && <Typography className='alertas'>Campos Vacios</Typography>}
-                  {errors.email?.type === 'pattern' && <Typography className='alertas'>Formato incorrecto</Typography>}
-            </StyledTableCell>
-            <StyledTableCell ><TextField id="outlined-basic" label="Usuario" variant="outlined" type="text" autoComplete='off' {...register("userName", { required: true, minLength: 4, maxLength: 30, pattern: expressions.userName })} />
-                  {errors.userName?.type === 'required' && <Typography className='alert'>Campos vacios</Typography>}
-                  {errors.userName?.type === 'minLength' && <Typography className='alert'>Minimo 4 caracteres</Typography>}
-                  {errors.userName?.type === 'maxLength' && <Typography className='alert'>Maximo 16 caracteres</Typography>}
-            </StyledTableCell>
-            <StyledTableCell ><TextField id="outlined-basic" label="Contraseña" variant="outlined" type="text" autoComplete='off' {...register("password", { required: true, minLength: 8, maxLength: 16 ,pattern: expressions.password })} />
-                  {errors.password?.type === 'required' && <Typography className='alert'>Campos vacios</Typography> }
-                  {errors.password?.type === 'minLength' && <Typography className='alert'>Minimo 8 caracteres</Typography>}
-                  {errors.password?.type === 'maxLength' && <Typography className='alert'>Maximo 16 caracteres</Typography>}
-            </StyledTableCell>
-            <StyledTableCell ><Button variant="contained" type='submit'>Agregar</Button></StyledTableCell>
-          </StyledTableRow>
-        </TableBody>
-      </Table>
-    </TableContainer>
-    {successMessage && (<Alert variant="filled" severity="success">{successMessage}</Alert>)}
-    </form>
-      )
+      <form onSubmit={handleSubmit(onSubmit)}>
+        <TableContainer component={Paper}>
+          <Table sx={{ minWidth: 700 }} aria-label="customized table">
+            <TableHead>
+              <TableRow>
+                <StyledTableCell align='center'>Nombre</StyledTableCell>
+                <StyledTableCell align='center'>Apellido</StyledTableCell>
+                <StyledTableCell align='center'>Email</StyledTableCell>
+                <StyledTableCell align='center'>Usuario</StyledTableCell>
+                <StyledTableCell align='center'>Contraseña</StyledTableCell>
+                <StyledTableCell ></StyledTableCell>
+              </TableRow>
+            </TableHead>
+            <TableBody>
+              <StyledTableRow>
+                <StyledTableCell ><TextField id="outlined-basic" label="Nombre" variant="outlined" type="text" autoComplete='off'{...register("name", { required: true, minLength: 4, maxLength: 30, pattern: expressions.name })} />
+                      {errors.name?.type === 'required' && <Typography className='alert'>Campos vacios</Typography>}
+                      {errors.name?.type === 'minLength' && <Typography className='alert'>Minimo 4 caracteres</Typography>}
+                      {errors.name?.type === 'maxLength' && <Typography className='alert'>Maximo 30 caracteres</Typography>}
+                </StyledTableCell>
+                <StyledTableCell ><TextField id="outlined-basic" label="Apellido" variant="outlined" type="text" autoComplete='off' {...register("lastName", { required: true, minLength: 4, maxLength: 16, pattern: expressions.lastName })} />
+                      {errors.lastName?.type === 'required' && <Typography className='alert'>Campos vacios</Typography>}  
+                      {errors.lastName?.type === 'minLength' && <Typography className='alert'>Minimo 4 caracteres</Typography>}
+                      {errors.lastName?.type === 'maxLength' && <Typography className='alert'>Maximo 16 caracteres</Typography>}
+                </StyledTableCell>
+                <StyledTableCell className='email'><TextField id="outlined-basic" label="Email" variant="outlined" type="email" autoComplete='off' fullWidth {...register("email", { required: true, pattern: expressions.email })} />
+                      {errors.email?.type === 'required' && <Typography className='alertas'>Campos Vacios</Typography>}
+                      {errors.email?.type === 'pattern' && <Typography className='alertas'>Formato incorrecto</Typography>}
+                </StyledTableCell>
+                <StyledTableCell ><TextField id="outlined-basic" label="Usuario" variant="outlined" type="text" autoComplete='off' {...register("userName", { required: true, minLength: 4, maxLength: 30, pattern: expressions.userName })} />
+                      {errors.userName?.type === 'required' && <Typography className='alert'>Campos vacios</Typography>}
+                      {errors.userName?.type === 'minLength' && <Typography className='alert'>Minimo 4 caracteres</Typography>}
+                      {errors.userName?.type === 'maxLength' && <Typography className='alert'>Maximo 16 caracteres</Typography>}
+                </StyledTableCell>
+                <StyledTableCell ><TextField id="outlined-basic" label="Contraseña" variant="outlined" type="text" autoComplete='off' {...register("password", { required: true, minLength: 8, maxLength: 16 ,pattern: expressions.password })} />
+                      {errors.password?.type === 'required' && <Typography className='alert'>Campos vacios</Typography> }
+                      {errors.password?.type === 'minLength' && <Typography className='alert'>Minimo 8 caracteres</Typography>}
+                      {errors.password?.type === 'maxLength' && <Typography className='alert'>Maximo 16 caracteres</Typography>}
+                </StyledTableCell>
+                <StyledTableCell ><Button variant="contained" type='submit'>Agregar</Button></StyledTableCell>
+              </StyledTableRow>
+            </TableBody>
+          </Table>
+        </TableContainer>
+        {successMessage && (<Alert variant="filled" severity="success">{successMessage}</Alert>)}
+      </form>
+    )
   }
   
   export default AddUser

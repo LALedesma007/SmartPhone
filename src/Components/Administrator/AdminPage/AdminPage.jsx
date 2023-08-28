@@ -33,6 +33,9 @@ const AdminPage = () => {
         </ListItem>
           <Divider/>
       </Box>
+      <Box display= 'flex' justifyContent= 'center' >
+          <img src='../../../img/CelularPortada.png'  style={{ maxWidth: "100%", height: "100%", marginTop: "50px", marginBottom: "50px"}}/>
+        </Box>
     </Grid>
     
   <Grid item xs={6} lg={9.5}>

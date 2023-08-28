@@ -1,12 +1,12 @@
 import axiosConfig from '../utils/axiosConfig';
 import { endpoints } from '../utils/endpointsConfig';
 
-export const addProductsOffers =async (user) =>{
+export const addProductsOffers =async (prod) =>{
   try {
     const addOneProductsOffers = await axiosConfig({
       url: `${endpoints.addproductoffer}`,
       method: 'POST',
-      data: user
+      data: prod
     })
     return addOneProductsOffers
   } catch (error) {
