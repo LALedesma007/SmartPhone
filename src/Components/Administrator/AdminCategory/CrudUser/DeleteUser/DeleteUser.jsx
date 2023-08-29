@@ -70,8 +70,8 @@ const DeleteUser = () => {
       } catch (error) {
         console.error(error.message);
       }
-  
     }
+    
   return (
     <TableContainer component={Paper}>
     <Table sx={{ minWidth: 700 }} aria-label="customized table">

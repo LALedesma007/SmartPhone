@@ -6,6 +6,8 @@ import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import { Box, Typography } from "@mui/material";
 import ShowOffer from "../ShowOffer/ShowOffer";
 import AddOffer from "../AddOffer/AddOffer";
+import DeleteOffer from "../DeleteOffer/DeleteOffer";
+import EditOffer from "../EditOffer/EditOffer";
 
 
 const CrudOfferPage = () => {
@@ -41,11 +43,11 @@ const CrudOfferPage = () => {
       <Box marginTop={'10px'}>
         <Accordion>
           <AccordionSummary expandIcon={<ExpandMoreIcon />} aria-controls="panel1a-content" id="panel1a-header">
-            <Typography>Editar Usuarios Existentes</Typography>
+            <Typography>Editar Ofertas Existentes</Typography>
           </AccordionSummary>
           <AccordionDetails>
             <Typography component='div'>
-              Editar Ofertas
+              <EditOffer/>
             </Typography>
           </AccordionDetails>
         </Accordion>
@@ -53,11 +55,11 @@ const CrudOfferPage = () => {
       <Box marginTop={'10px'}>
         <Accordion>
           <AccordionSummary expandIcon={<ExpandMoreIcon />} aria-controls="panel1a-content" id="panel1a-header">
-            <Typography>Eliminar Usuarios Existentes</Typography>
+            <Typography>Eliminar Ofertas Existentes</Typography>
           </AccordionSummary>
           <AccordionDetails>
             <Typography component='div'>
-              Eliminar Ofertas
+              <DeleteOffer/>
             </Typography>
           </AccordionDetails>
         </Accordion>

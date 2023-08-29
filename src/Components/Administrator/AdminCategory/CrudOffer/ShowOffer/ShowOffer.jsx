@@ -12,21 +12,24 @@ const StyledTableCell = styled(TableCell)(({ theme }) => ({
     [`&.${tableCellClasses.body}`]: {
       fontSize: 14,
     },
-    '&.name': {
-        width: '15%',
-      },
-      '&.lastName': {
-        width: '15%',
-      },
-      '&.email': {
-        width: '15%',
-      },
-      '&.user': {
-        width: '15%',
-      },
-      '&.password': {
-        width: '15%',
-      },
+    '&.title': {
+      width: '15%',
+    },
+    '&.model': {
+      width: '15%',
+    },
+    '&.description': {
+      width: '15%',
+    },
+    '&.price': {
+      width: '15%',
+    },
+    '&.category': {
+      width: '15%',
+    },
+    '&.image': {
+      width: '15%',
+    },
   }));
   
   const StyledTableRow = styled(TableRow)(({ theme }) => ({
@@ -45,8 +48,8 @@ const ShowOffer = () => {
   const [ allOffer , setAllOffer  ] = useState([])
 
   const Img = styled('img')({
-    width: 100,
-    height: "15vh",
+    width: 70,
+    height: "13vh",
     objectPosition: 'center',
   })
   
@@ -61,7 +64,7 @@ const ShowOffer = () => {
 
   return (
     <TableContainer component={Paper}>
-      <Table sx={{ minWidth: 700 }} aria-label="customized table">
+      <Table aria-label="customized table">
         <TableHead>
           <TableRow>
             <StyledTableCell  align='center'>Imagen</StyledTableCell>
