@@ -9,7 +9,8 @@ import Paper from '@mui/material/Paper';
 import CurrencyExchangeSharpIcon from '@mui/icons-material/CurrencyExchangeSharp';
 import { useEffect, useState } from 'react';
 import { Button, Typography } from '@mui/material';
-import { deleteProductsOffers, getProductsOffers } from '../../../../../service/indexProductsOffers';
+import { deleteProducts, getProducts } from '../../../../../service/indexProductsAdm';
+
 
 const StyledTableCell = styled(TableCell)(({ theme }) => ({
     [`&.${tableCellClasses.head}`]: {
@@ -49,33 +50,33 @@ const StyledTableCell = styled(TableCell)(({ theme }) => ({
     },
   }));
 
-const DeleteOffer = () => {
-    const [ allOffer , setAllOffer  ] = useState([])
+const DeleteProduct = () => {
+
+  const [ allProd , setAllProd  ] = useState([])
 
     const Img = styled('img')({
         width: 70,
-        height: "13vh",
+        height: "11vh",
         objectPosition: 'center',
       })
   
-    const getAllOffer = async () => {
-        const resp = await getProductsOffers()
-        setAllOffer(resp.data.getDataOffers)
+    const getAllProd = async () => {
+        const resp = await getProducts()
+        setAllProd(resp.data.getData)
       } 
     
       useEffect(() => {
-        getAllOffer()
-      }, [allOffer])
+        getAllProd()
+      }, [allProd])
     
-    const deleteOneOffer = async(_id) => {
+    const deleteOneProd = async(_id) => {
       try {    
-        await deleteProductsOffers(_id);
-        getAllOffer()
+        await deleteProducts(_id);
+        getAllProd()
       } catch (error) {
         console.error(error.message);
       }
     }
-
   return (
     <TableContainer component={Paper}>
       <Table  aria-label="customized table">
@@ -89,13 +90,13 @@ const DeleteOffer = () => {
             </TableRow>
         </TableHead>
         <TableBody>
-            {allOffer.map((row) => (
+            {allProd.map((row) => (
                 <StyledTableRow key={row._id}>
                     <StyledTableCell component="th" scope="row" align='center'><Img src={row.image} /></StyledTableCell>
                     <StyledTableCell align='center'><Typography variant='h6'>{row.title}</Typography></StyledTableCell>
                     <StyledTableCell align='center'><Typography variant='h6'>{row.model}</Typography></StyledTableCell>
                     <StyledTableCell align='center'><Typography variant='h6' color='primary' fontWeight="fontWeightBold" className="typogra"><CurrencyExchangeSharpIcon style={{ margin: '5px' }} />{row.price}</Typography></StyledTableCell>
-                    <StyledTableCell ><Button variant="contained" color='error' onClick={()=>deleteOneOffer(row._id)}>Eliminar</Button></StyledTableCell>
+                    <StyledTableCell ><Button variant="contained" color='error' onClick={()=>deleteOneProd(row._id)}>Eliminar</Button></StyledTableCell>
                 </StyledTableRow>
             ))}
         </TableBody>
@@ -104,4 +105,4 @@ const DeleteOffer = () => {
   )
 }
 
-export default DeleteOffer
+export default DeleteProduct
