@@ -121,10 +121,10 @@ const AddOffer = () => {
                       {errors.description?.type === 'minLength' && <Typography className='alert'>Minimo 3 caracteres</Typography>}
                       {errors.description?.type === 'maxLength' && <Typography className='alert'>Maximo 500 caracteres</Typography>}
                 </StyledTableCell>
-                <StyledTableCell><TextField id="outlined-basic" label="Precio" variant="outlined" type="text" autoComplete='off' {...register("price", { required: true,  minLength: 3, maxLength: 4, pattern: expressionsProducts.price })} />
+                <StyledTableCell><TextField id="outlined-basic" label="Precio" variant="outlined" type="text" autoComplete='off' {...register("price", { required: true,  minLength: 1, maxLength: 9, pattern: expressionsProducts.price })} />
                       {errors.price?.type === 'required' && <Typography className='alert'>Campos vacios</Typography> }
-                      {errors.price?.type === 'minLength' && <Typography className='alert'>Minimo 3 caracteres</Typography>}
-                      {errors.price?.type === 'maxLength' && <Typography className='alert'>Maximo 500 caracteres</Typography>}
+                      {errors.price?.type === 'minLength' && <Typography className='alert'>Minimo 1 caracteres</Typography>}
+                      {errors.price?.type === 'maxLength' && <Typography className='alert'>Maximo 9 caracteres</Typography>}
                 </StyledTableCell>
                 <StyledTableCell><TextField id="outlined-basic" label="Cantidad" variant="outlined" type="text" autoComplete='off' {...register("quanty", { required: true })} />
                       {errors.quanty?.type === 'required' && <Typography className='alert'>Campos vacios</Typography> }
