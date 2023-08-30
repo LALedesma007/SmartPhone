@@ -3,7 +3,7 @@ const expressionsProducts ={
   title: /^[a-zA-ZÀ-ÿ\s]{3,40}$/,
   model: /^[a-zA-Z0-9_-]{3,40}$/,
   description: /^[a-zA-ZÀ-ÿ\s]{3,500}$/,
-  price: /^\$?\d+(\.\d{3,4})?$/,
+  price: /^\$?\d+(\.\d{1,9})?$/,
 
 }
 export default expressionsProducts
