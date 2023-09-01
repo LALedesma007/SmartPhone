@@ -10,10 +10,14 @@ import SmartPhone from '../Category/SmartPhone/SmartPhone';
 import SmartWatch from '../Category/SmartWatch/SmartWatch';
 import React, { useState } from 'react'
 import './ProductPage.css'
+import SearchProducts from '../Search/SearchProducts/SearchProducts';
+import SearchListProducts from '../Search/SearchListProducts/SearchListProducts';
 
 
 const ProductPage = () => {
+
   const [selectedCategory, setSelectedCategory] = useState('all');
+  
  
 
   return (
@@ -23,6 +27,9 @@ const ProductPage = () => {
             <Typography variant="h6" style={{ marginTop: "20px", marginBottom: "20px" }}>
               <Divider textAlign="center">Categorias</Divider>
             </Typography>
+            <ListItem style={{ justifyContent: "start" }} >
+            <div onClick={() => setSelectedCategory('search')}><SearchProducts/></div>
+            </ListItem>
             <ListItem style={{ justifyContent: "start" }}>
               <Button color="inherit" component="a" onClick={() => setSelectedCategory('celulares')} startIcon={<StayCurrentPortraitIcon/>}>Celulares</Button>
             </ListItem>
@@ -39,9 +46,6 @@ const ProductPage = () => {
               <Button color="inherit" component="a" onClick={() => setSelectedCategory('consolas')} startIcon={<VideogameAssetIcon/>}>Consolas</Button>
             </ListItem>
               <Divider/>
-            {/* <ListItem style={{ justifyContent: "center" }}>
-              <img src='../../../img/celularPortada.png' className='imgCategory' />
-            </ListItem> */}
           </Box>
         </Grid>
         
@@ -57,6 +61,8 @@ const ProductPage = () => {
           {selectedCategory === 'auriculares' && <HeadPhones/>}
           {selectedCategory === 'consolas' && <GamerConsole/>}
           {selectedCategory === 'all' && <RandomProducts/>}
+          {selectedCategory === 'search' && <SearchListProducts/> }
+          
         </Box>
       </Grid>
     </Grid>

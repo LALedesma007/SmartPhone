@@ -37,7 +37,7 @@ const SmartWatch = () => {
           <Grid container spacing={1}>
             {
               prodWatch.map(item => (
-                <Grid item key={item._id} xs={12} sm={6} lg={3}>
+                <Grid item key={item._id} xs={12} sm={6} lg={2}>
                   <Card sx={{ maxWidth: 210 }} style={{ boxShadow: 'rgba(136, 165, 191, 0.48) 6px 2px 16px 0px, rgba(255, 255, 255, 0.8) -6px -2px 16px 0px', }}>
                     <CardMedia sx={{ height: 90 }} style={{ height: '150px', width: '120px', display: 'flex', alignItems: 'center', margin: 'auto' }}
                       image={item.image} />
