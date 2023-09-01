@@ -5,13 +5,13 @@ import { useContext } from 'react';
 import {dataContext} from '../../../context/DataContext';
 
 const CartCounter = ({ item }) => {
-  const { cartgamer, cartheadset, cartPhone, cartrandom, cartwatch, cartOffer, setCartPhone, setCartHeadset, SetCartGamer, SetCartWatch, Setcartrandom, SetcartOffer  } = useContext(dataContext);
+  const { cartgamer, cartheadset, cartPhone, cartrandom, cartwatch, cartOffer, cartResults, setCartPhone, setCartHeadset, SetCartGamer, SetCartWatch, Setcartrandom, SetcartOffer, SetCartResults  } = useContext(dataContext);
 
   const subtractProduct = () => {
 
     let updatedCart = [];
 
-    const allCarts = [cartgamer, cartheadset, cartPhone, cartrandom, cartwatch, cartOffer];
+    const allCarts = [cartgamer, cartheadset, cartPhone, cartrandom, cartwatch, cartOffer, cartResults];
 
     const existingProduct = allCarts.find((cart) => cart.some((product) => product._id === item._id));
     
@@ -32,9 +32,9 @@ const CartCounter = ({ item }) => {
         SetCartWatch(updatedCart);
       } else if (cartOffer.includes(existingProduct[0])) {
         SetcartOffer(updatedCart);
+      } else if (cartResults.includes(existingProduct[0])) {
+        SetCartResults(updatedCart);
       }
-      
-
     }
     
   };
@@ -77,6 +77,11 @@ const CartCounter = ({ item }) => {
         product._id === item._id ? { ...product, quanty: product.quanty + 1 } : product
       );
       SetcartOffer(updatedCart);
+    }else if (cartResults.includes(item)) {
+      updatedCart = cartResults.map((product) =>
+        product._id === item._id ? { ...product, quanty: product.quanty + 1 } : product
+      );
+      SetCartResults(updatedCart);
     }
   };
  

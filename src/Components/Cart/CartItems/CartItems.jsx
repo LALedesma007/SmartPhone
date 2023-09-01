@@ -5,9 +5,9 @@ import {dataContext} from '../../../context/DataContext';
 import { Typography } from '@mui/material';
 
 const CartItems = () => {
-  const { cartgamer, cartheadset, cartPhone, cartrandom, cartwatch, cartOffer } = useContext(dataContext);
+  const { cartgamer, cartheadset, cartPhone, cartrandom, cartwatch, cartOffer, cartResults} = useContext(dataContext);
 
-  const allCarts = [cartgamer, cartheadset, cartPhone, cartrandom, cartwatch, cartOffer];
+  const allCarts = [cartgamer, cartheadset, cartPhone, cartrandom, cartwatch, cartOffer, cartResults];
 
   
 
