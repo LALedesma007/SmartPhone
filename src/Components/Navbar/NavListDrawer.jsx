@@ -1,7 +1,10 @@
 import { Box, Divider, List, ListItem, ListItemButton, ListItemIcon, ListItemText } from "@mui/material"
 import InboxIcon from '@mui/icons-material/Inbox';
 import AddToHomeScreenIcon from '@mui/icons-material/AddToHomeScreen';
+import ExitToAppIcon from '@mui/icons-material/ExitToApp';
 import PropTypes from "prop-types";
+import Logout from "../Logout/Logout";
+import LogoutNavListDrawer from "../Logout/LogoutNavListDrawer";
 
 
 const NavListDrawer = ({ navLinks }) => {
@@ -34,9 +37,13 @@ const NavListDrawer = ({ navLinks }) => {
               </ListItemButton>
             </ListItem>
           ))}
+           <ListItem disablePadding>
+              <LogoutNavListDrawer/>
+            </ListItem>
         </List>
       </nav>
     </Box>
+
   );
 }
 
