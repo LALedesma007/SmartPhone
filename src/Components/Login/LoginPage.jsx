@@ -7,11 +7,14 @@ import './LoginPage.css'
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import EmailIcon from '@mui/icons-material/Email';
 import PatternIcon from '@mui/icons-material/Pattern';
-
+import { useSnackbar } from "notistack";
+import { useHistory } from "react-router-use-history"
 
 const LoginPage = () => {
 
   const { register, formState: { errors }, reset, handleSubmit } = useForm();
+  const { enqueueSnackbar } = useSnackbar();
+  const history = useHistory();
 
   const onSubmit = async(data) =>{
     try {
@@ -22,11 +25,12 @@ const LoginPage = () => {
     }
     const userOne = await getUser(user)
     if (userOne === undefined) {
-      alert('Usuario no registrado')
+      enqueueSnackbar(`Acceso denegado ${user.userName}` , {variant: "error", anchorOrigin: {vertical: "top", horizontal: "center",}});
+      reset()
     }else{
       localStorage.setItem("userlog", JSON.stringify({user}))
-      alert('Bienvenido')
-      reset()
+      enqueueSnackbar(`Bienvenido ${user.userName}`, {variant: "success", anchorOrigin: {vertical: "top", horizontal: "center",}});
+      history.push("/")
      }
     } catch (error) {
       console.error(err.message);
