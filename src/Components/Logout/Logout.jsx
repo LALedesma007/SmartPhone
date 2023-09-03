@@ -1,13 +1,16 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { useHistory } from 'react-router-use-history';
 import ExitToAppIcon from '@mui/icons-material/ExitToApp';
 import { Button } from '@mui/material';
+import { dataContext } from '../../context/DataContext';
 
 
 const Logout = () => {
+  const { logout } = useContext(dataContext);
   const history = useHistory();
 
   const handleLogout = () => {
+    logout()
     localStorage.removeItem("userlog");
     history.push('/login');
   };
