@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { useForm } from 'react-hook-form';
 import  expressions from '../../utils/expressions'
 import { getUser } from '../../service/indexUsers';
@@ -9,32 +9,34 @@ import EmailIcon from '@mui/icons-material/Email';
 import PatternIcon from '@mui/icons-material/Pattern';
 import { useSnackbar } from "notistack";
 import { useHistory } from "react-router-use-history"
+import { dataContext } from '../../context/DataContext';
 
 const LoginPage = () => {
-
+  const { login } = useContext(dataContext);
   const { register, formState: { errors }, reset, handleSubmit } = useForm();
   const { enqueueSnackbar } = useSnackbar();
   const history = useHistory();
 
   const onSubmit = async(data) =>{
     try {
-     let user ={
-      userName: data.userName,
-      email: data.email,
-      password: data.password,
-    }
-    const userOne = await getUser(user)
-    if (userOne === undefined) {
-      enqueueSnackbar(`Acceso denegado ${user.userName}` , {variant: "error", anchorOrigin: {vertical: "top", horizontal: "center",}});
-      reset()
-    }else{
-      localStorage.setItem("userlog", JSON.stringify({user}))
-      enqueueSnackbar(`Bienvenido ${user.userName}`, {variant: "success", anchorOrigin: {vertical: "top", horizontal: "center",}});
-      history.push("/")
-     }
+      let user = {
+        userName: data.userName,
+        email: data.email,
+      }
+      
+      const userOne = await getUser(user)
+      if (userOne === undefined) {
+        enqueueSnackbar(`Acceso denegado ${user.userName}`, { variant: "error", anchorOrigin: { vertical: "top", horizontal: "center", } });
+        reset()
+      } else {
+        login(user);
+        localStorage.setItem("userlog", JSON.stringify({ user }))
+        enqueueSnackbar(`Bienvenido ${user.userName}`, { variant: "success", anchorOrigin: { vertical: "top", horizontal: "center", } });
+        history.push("/")
+      }
     } catch (error) {
       console.error(err.message);
-    } 
+    }
   }
 
   return (

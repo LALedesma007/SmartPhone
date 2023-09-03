@@ -18,6 +18,8 @@ const DataProvider = ({children}) => {
   const [cartOffer, SetcartOffer] = useState ([])
   const [searchResults, SetSearchResults] = useState([])
   const [cartResults, SetCartResults] = useState([])
+  const [user, SetUser] = useState([])
+  const [authenticatedUser, setAuthenticatedUser] = useState(null);
 
   const getallproduct = async() =>{
     try {
@@ -30,6 +32,7 @@ const DataProvider = ({children}) => {
 
   useEffect(() => {
     getallproduct()
+
   }, [])
 
   const getallproductOffer = async() =>{
@@ -44,9 +47,52 @@ const DataProvider = ({children}) => {
   useEffect(() => {
     getallproductOffer()
   }, [])
-  
 
-  return <dataContext.Provider value={{ data, cartPhone, setCartPhone, cartheadset, setCartHeadset, cartgamer , SetCartGamer, cartwatch , SetCartWatch, cartrandom, Setcartrandom, dataOffer, cartOffer, SetcartOffer, searchResults, SetSearchResults, cartResults, SetCartResults}}>{children}</dataContext.Provider>
+  const getalluser = async() =>{
+    try {
+      const resp = await axios.get('https://smartphone-deploy.onrender.com/api/getuser');  
+      SetUser(resp.data.getData)
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
+  useEffect(() => {
+    getalluser()
+  }, [])
+  
+  const login = async (userData) => {
+    try {
+      // Realiza la autenticación aquí, comparando los datos con la lista de usuarios
+      const userMatch = user.find(
+        (user) => user.userName === userData.userName && user.email === userData.email
+      );
+
+      if (userMatch) {
+        setAuthenticatedUser(userMatch);
+        localStorage.setItem("authenticatedUser", JSON.stringify(userMatch));
+      } else {
+        // Maneja la autenticación fallida
+      }
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
+  const logout = () => {
+    setAuthenticatedUser(null);
+    localStorage.removeItem("authenticatedUser");
+  };
+
+  useEffect(() => {
+    const storedUser = localStorage.getItem("authenticatedUser");
+    if (storedUser) {
+      setAuthenticatedUser(JSON.parse(storedUser));
+    }
+  }, []);
+
+
+  return <dataContext.Provider value={{ data, cartPhone, setCartPhone, cartheadset, setCartHeadset, cartgamer , SetCartGamer, cartwatch , SetCartWatch, cartrandom, Setcartrandom, dataOffer, cartOffer, SetcartOffer, searchResults, SetSearchResults, cartResults, SetCartResults, user, SetUser, authenticatedUser, login, logout}}>{children}</dataContext.Provider>
  
 }
 
