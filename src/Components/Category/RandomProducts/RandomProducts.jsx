@@ -5,11 +5,15 @@ import {dataContext} from '../../../context/DataContext';
 import { useContext } from 'react';
 import { useState } from 'react';
 import { useEffect } from 'react';
+import {useSnackbar} from 'notistack';
+import {useHistory} from "react-router-use-history";
 
 const RandomProducts = () => {
 
-  const {data, cartrandom, Setcartrandom} = useContext(dataContext);
+  const {data, cartrandom, Setcartrandom, authenticatedUser} = useContext(dataContext);
   const [ prodRandom, SetProdRandom] = useState([])
+  const { enqueueSnackbar } = useSnackbar();
+  const history = useHistory();
 
   const getrandom = () =>{
     const randomprod = data.sort(() => Math.random() - 0.5)
@@ -21,13 +25,17 @@ const RandomProducts = () => {
   }, [])
 
   const buyrandom = (item) => {
+    if (authenticatedUser) {
     const productRepeat = cartrandom.find((datas) => datas._id === item._id)
     if (productRepeat) {
       Setcartrandom(cartrandom.map((datas) => datas._id === item._id ? {...item, quanty: productRepeat.quanty + 1} : datas))
-    } else {
-     Setcartrandom([...cartrandom, item]) 
+    }else {
+      Setcartrandom([...cartrandom, item]) 
+    }  
+    }else {
+      enqueueSnackbar(`Debe iniciar sesión para realizar la compra`, { variant: "warning", anchorOrigin: { vertical: "top", horizontal: "center", } });
+      history.push("/login")
     }
-    
   }
 
 

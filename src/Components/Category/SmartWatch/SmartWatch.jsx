@@ -5,11 +5,14 @@ import {dataContext} from '../../../context/DataContext';
 import { useContext } from 'react';
 import { useState } from 'react';
 import { useEffect } from 'react';
+import {useSnackbar} from 'notistack';
+import {useHistory} from "react-router-use-history";
 
 const SmartWatch = () => {
-
-  const {data , cartwatch , SetCartWatch} = useContext(dataContext);
+  const {data , cartwatch , SetCartWatch, authenticatedUser} = useContext(dataContext);
   const [ prodWatch, SetProdWatch] = useState([])
+  const { enqueueSnackbar } = useSnackbar();
+  const history = useHistory();
 
   const getwatch = () =>{
     const filterwatch = data.filter(product => product.category === 'Relojes')
@@ -21,13 +24,17 @@ const SmartWatch = () => {
   }, [])
 
   const buywatch = (item) => {
-    const productRepeat = cartwatch.find((datas) => datas._id === item._id)
+    if (authenticatedUser) {
+     const productRepeat = cartwatch.find((datas) => datas._id === item._id)
     if (productRepeat) {
       SetCartWatch(cartwatch.map((datas) => datas._id === item._id ? {...item, quanty: productRepeat.quanty + 1} : datas))
-    } else {
-     SetCartWatch([...cartwatch, item]) 
+    }else {
+      SetCartWatch([...cartwatch, item]) 
+    }  
+    }else {
+      enqueueSnackbar(`Debe iniciar sesión para realizar la compra`, { variant: "warning", anchorOrigin: { vertical: "top", horizontal: "center", } });
+      history.push("/login")
     }
-    
   }
 
   return (

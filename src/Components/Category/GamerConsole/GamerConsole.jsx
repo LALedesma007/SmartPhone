@@ -1,16 +1,19 @@
 import { Button, Card, CardActions, CardContent, CardMedia, Grid, LinearProgress, Typography } from '@mui/material';
-import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
-import CurrencyExchangeSharpIcon from '@mui/icons-material/CurrencyExchangeSharp';
 import { useContext } from 'react';
 import {dataContext} from '../../../context/DataContext';
 import { useState } from 'react';
 import { useEffect } from 'react';
-
+import {useSnackbar} from 'notistack';
+import { useHistory } from 'react-router-use-history';
+import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
+import CurrencyExchangeSharpIcon from '@mui/icons-material/CurrencyExchangeSharp';
 
 const GamerConsole = () => {
 
-  const {data , cartgamer , SetCartGamer} = useContext(dataContext);
+  const {data , cartgamer , SetCartGamer, authenticatedUser} = useContext(dataContext);
   const [ getProdGamer, SetgetProdGamer] = useState([])
+  const { enqueueSnackbar } = useSnackbar();
+  const history = useHistory();
 
   const getgamer = () =>{
     const filtergamer = data.filter(product => product.category === 'Consolas')
@@ -22,12 +25,18 @@ const GamerConsole = () => {
   }, [])
 
   const buygamer = (item) => {
+    if (authenticatedUser) {
     const productRepeat = cartgamer.find((datas) => datas._id === item._id)
     if (productRepeat) {
       SetCartGamer(cartgamer.map((datas) => datas._id === item._id ? {...item, quanty: productRepeat.quanty + 1} : datas))
     } else {
-     SetCartGamer([...cartgamer, item]) 
+      SetCartGamer([...cartgamer, item]) 
+    }  
+    } else {
+      enqueueSnackbar(`Debe iniciar sesión para realizar la compra`, { variant: "warning", anchorOrigin: { vertical: "top", horizontal: "center", } });
+      history.push("/login")
     }
+    
   }
 
   return (

@@ -5,11 +5,14 @@ import {dataContext} from '../../../context/DataContext';
 import { useContext } from 'react';
 import { useState } from 'react';
 import { useEffect } from 'react';
+import {useSnackbar} from 'notistack';
+import {useHistory} from "react-router-use-history";
 
 const HeadPhones = () => {
-
-  const {data , cartheadset, setCartHeadset} = useContext(dataContext);
+  const {data , cartheadset, setCartHeadset, authenticatedUser} = useContext(dataContext);
   const [ headset, setHeadset] = useState([])
+  const { enqueueSnackbar } = useSnackbar();
+  const history = useHistory();
 
   const gethead = () =>{
     const filterhead = data.filter(product => product.category === 'Auriculares')
@@ -21,15 +24,18 @@ const HeadPhones = () => {
   }, [])
 
   const buyHead = (item) => {
+    if (authenticatedUser) {
     const productRepeat = cartheadset.find((datas) => datas._id === item._id)
     if (productRepeat) {
       setCartHeadset(cartheadset.map((datas) => datas._id === item._id ? {...item, quanty: productRepeat.quanty + 1} : datas))
-    } else {
-     setCartHeadset([...cartheadset, item]) 
+    }else {
+      setCartHeadset([...cartheadset, item]) 
+    }  
+    }else {
+      enqueueSnackbar(`Debe iniciar sesión para realizar la compra`, { variant: "warning", anchorOrigin: { vertical: "top", horizontal: "center", } });
+      history.push("/login")
     }
-    
   }
-
 
   return (
     <div>
