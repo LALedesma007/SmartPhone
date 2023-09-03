@@ -6,11 +6,15 @@ import {dataContext} from '../../../context/DataContext';
 import { useContext } from 'react';
 import { useState } from 'react';
 import { useEffect } from 'react';
+import {useSnackbar} from 'notistack';
+import {useHistory} from "react-router-use-history";
 
 const SmartPhone = () => {
-  const {data , cartPhone , setCartPhone} = useContext(dataContext);
+  const {data , cartPhone , setCartPhone, authenticatedUser} = useContext(dataContext);
   const [ phones, setPhones] = useState([])
-
+  const { enqueueSnackbar } = useSnackbar();
+  const history = useHistory();
+ 
   const getphones = () =>{
     const filterphone = data.filter(product => product.category === 'Celulares')
     setPhones(filterphone)
@@ -21,15 +25,19 @@ const SmartPhone = () => {
   }, [])
 
   const buyPhone = (item) => {
+    if (authenticatedUser) {
     const productRepeat = cartPhone.find((datas) => datas._id === item._id)
     if (productRepeat) {
       setCartPhone(cartPhone.map((datas) => datas._id === item._id ? {...item, quanty: productRepeat.quanty + 1} : datas))
-    } else {
+    }else {
       setCartPhone([...cartPhone, item])
+    }  
+    }else {
+      enqueueSnackbar(`Debe iniciar sesión para realizar la compra`, { variant: "warning", anchorOrigin: { vertical: "top", horizontal: "center", } });
+      history.push("/login")
     }
   }
   
-
   return (
     <div>
       {

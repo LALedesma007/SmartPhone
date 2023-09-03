@@ -8,7 +8,6 @@ import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import CurrencyExchangeSharpIcon from '@mui/icons-material/CurrencyExchangeSharp';
 import './Offers.css'
 
-
 const Offers = () => {
   const {dataOffer, cartOffer, SetcartOffer, authenticatedUser} = useContext(dataContext);
   const { enqueueSnackbar } = useSnackbar();
@@ -30,11 +29,10 @@ const Offers = () => {
     }else{
       SetcartOffer([...cartOffer, item])
     }  
-    } else {
+    }else {
       enqueueSnackbar(`Debe iniciar sesión para realizar la compra`, { variant: "warning", anchorOrigin: { vertical: "top", horizontal: "center", } });
       history.push("/login")
     }
-    
   }
 
   return (
