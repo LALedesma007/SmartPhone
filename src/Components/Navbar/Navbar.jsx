@@ -8,52 +8,51 @@ import PhoneIphoneIcon from '@mui/icons-material/PhoneIphone';
 import AdminPanelSettingsIcon from '@mui/icons-material/AdminPanelSettings';
 import ExitToAppIcon from '@mui/icons-material/ExitToApp';
 import { useState } from "react"
-import { NavLink } from "react-router-dom";
+import { useContext } from 'react';
+import { dataContext } from "../../context/DataContext";
+import { useHistory } from "react-router-use-history";
 import LogoNavbar from '../../../img/LogoNavbar.png'
-import './Navbar.css'
 import CartItems from "../Cart/CartItems/CartItems";
 import Logout from "../Logout/Logout";
-
+import './Navbar.css'
 
 const Navbar = () => {
 
     const [ open , setOpen ] = useState(false)
-  
-    const navLinks = [
-      {
-        id: 1, title: 'Inicio', path: '/', icon: <RoofingIcon/>
-      },
-      {
-        id: 2, title: 'Productos', path: '/product', icon: <PhoneIphoneIcon/>
-      },
-      {
-        id: 3, title: 'Acceso', path: '/login', icon: <AccountCircleIcon/>
-      },
-      {
-        id: 4, title: 'Registro', path: '/register', icon: <AppRegistrationIcon/>
-      },
-      {
-        id: 5, title: 'Carrito', path: '/Shopping' , icon: <CartItems/>
-      },
-      {
-        id: 6, title: 'Administrador', path: '/Administrator' , icon: <AdminPanelSettingsIcon/>
-      }
-    ]
-  
+    const history = useHistory();
+    const { authenticatedUser } = useContext(dataContext);
+
+    const handleMenuButtonClick = () => {
+      setOpen(true);
+    };
   
     return (
       <>
       <AppBar position="static" style={{ backgroundColor: '#170D42', width: '100%'}}>
         <Toolbar>
-        <img src={LogoNavbar} alt='logo' className="logonavbar"/>
-          <Box sx={{ display:{ xs: 'none', sm: 'block'} }}>
-          {
-            navLinks.map(item =>(
-              <Button color="inherit" variant="outlined" size="small" style={{ margin: 5, borderRadius: '50px', borderColor: '#F5811e', borderWidth: '2px'}} key={item.id} component={NavLink} to={item.path} startIcon={item.icon}>{item.title}</Button>
-            ))
-          }
-          <Logout/>
-          </Box>
+            <img src={LogoNavbar} alt='logo' className="logonavbar"/>
+            <Box sx={{ display:{ xs: 'none', sm: 'block'} }}>
+              <Button color="inherit" variant="outlined" size="small" style={{ margin: 5, borderRadius: '50px', borderColor: '#F5811e', borderWidth: '2px' }} onClick={() => history.push('/')} startIcon={<RoofingIcon />}>
+                  Inicio
+              </Button>
+              <Button color="inherit" variant="outlined" size="small" style={{ margin: 5, borderRadius: '50px', borderColor: '#F5811e', borderWidth: '2px' }} onClick={() => history.push('/product')} startIcon={<PhoneIphoneIcon />}>
+                  Productos
+              </Button>
+              <Button color="inherit" variant="outlined" size="small" style={{ margin: 5, borderRadius: '50px', borderColor: '#F5811e', borderWidth: '2px' }} onClick={() => history.push('/Shopping')} startIcon={<CartItems />}>
+                  Carrito
+              </Button>
+              {authenticatedUser && authenticatedUser.role === 'admin' ? (
+              <Button color="inherit" variant="outlined" size="small" style={{ margin: 5, borderRadius: '50px', borderColor: '#F5811e', borderWidth: '2px' }} onClick={() => history.push('/Administrator')} startIcon={<AdminPanelSettingsIcon />}>
+                  Administrador
+              </Button>) : null}
+              <Button color="inherit" variant="outlined" size="small" style={{ margin: 5, borderRadius: '50px', borderColor: '#F5811e', borderWidth: '2px' }} onClick={() => history.push('/login')} startIcon={<AccountCircleIcon />}>
+                  Acceso
+              </Button>
+              <Button color="inherit" variant="outlined" size="small" style={{ margin: 5, borderRadius: '50px', borderColor: '#F5811e', borderWidth: '2px' }} onClick={() => history.push('/register')} startIcon={<AppRegistrationIcon />}>
+                  Registro
+              </Button>
+              <Logout/>
+            </Box>
           <IconButton color="inherit" size="large" sx={{ display:{ xs: 'flex', sm: 'none'} }} onClick={()=> setOpen(true)}>
              <MenuIcon />
           </IconButton>
@@ -61,7 +60,7 @@ const Navbar = () => {
       </AppBar>
   
       <Drawer open={open} anchor="left" sx={{ display:{ xs: 'flex', sm: 'block'} }} onClose={()=>setOpen(false)} >
-        <NavListDrawer navLinks={ navLinks }/>
+        <NavListDrawer />
       </Drawer>
       </>
     )
