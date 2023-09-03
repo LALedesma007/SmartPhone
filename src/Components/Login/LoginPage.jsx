@@ -1,15 +1,15 @@
 import React, { useContext } from 'react'
 import { useForm } from 'react-hook-form';
-import  expressions from '../../utils/expressions'
 import { getUser } from '../../service/indexUsers';
 import { Box, Button, FormGroup, Grid, TextField, Typography } from '@mui/material';
-import './LoginPage.css'
-import AccountCircleIcon from '@mui/icons-material/AccountCircle';
-import EmailIcon from '@mui/icons-material/Email';
-import PatternIcon from '@mui/icons-material/Pattern';
 import { useSnackbar } from "notistack";
 import { useHistory } from "react-router-use-history"
 import { dataContext } from '../../context/DataContext';
+import AccountCircleIcon from '@mui/icons-material/AccountCircle';
+import EmailIcon from '@mui/icons-material/Email';
+import PatternIcon from '@mui/icons-material/Pattern';
+import expressions from '../../utils/expressions'
+import './LoginPage.css'
 
 const LoginPage = () => {
   const { login } = useContext(dataContext);
@@ -23,7 +23,6 @@ const LoginPage = () => {
         userName: data.userName,
         email: data.email,
       }
-      
       const userOne = await getUser(user)
       if (userOne === undefined) {
         enqueueSnackbar(`Acceso denegado ${user.userName}`, { variant: "error", anchorOrigin: { vertical: "top", horizontal: "center", } });

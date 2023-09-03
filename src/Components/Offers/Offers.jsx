@@ -1,15 +1,18 @@
 import styled from "@emotion/styled"
-import { Box, Button, CardActions, Divider, LinearProgress, Paper, Typography } from "@mui/material"
+import {Box, Button, CardActions, Divider, LinearProgress, Paper, Typography} from "@mui/material"
+import {useContext} from 'react';
+import {dataContext} from '../../context/DataContext';
+import {useSnackbar} from 'notistack';
+import {useHistory} from "react-router-use-history";
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import CurrencyExchangeSharpIcon from '@mui/icons-material/CurrencyExchangeSharp';
-import { useContext, useEffect, useState } from 'react';
-import {dataContext} from '../../context/DataContext';
 import './Offers.css'
 
 
-
 const Offers = () => {
-  const {dataOffer, cartOffer, SetcartOffer} = useContext(dataContext);
+  const {dataOffer, cartOffer, SetcartOffer, authenticatedUser} = useContext(dataContext);
+  const { enqueueSnackbar } = useSnackbar();
+  const history = useHistory();
  
   const Img = styled('img')({
     width: 85,
@@ -20,7 +23,18 @@ const Offers = () => {
   })
 
   const buyOffers = (item) => {
-    SetcartOffer([...cartOffer, item])
+    if (authenticatedUser) {
+    const productRepeat = cartOffer.find((datas) => datas._id ===item._id)
+    if(productRepeat){
+      SetcartOffer(cartOffer.map((datas) => datas._id === item._id ? {...item, quanty: productRepeat.quanty + 1} : datas ))
+    }else{
+      SetcartOffer([...cartOffer, item])
+    }  
+    } else {
+      enqueueSnackbar(`Debe iniciar sesión para realizar la compra`, { variant: "warning", anchorOrigin: { vertical: "top", horizontal: "center", } });
+      history.push("/login")
+    }
+    
   }
 
   return (
