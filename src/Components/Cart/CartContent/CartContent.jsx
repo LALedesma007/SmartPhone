@@ -1,4 +1,4 @@
-import { Box, Divider, Grid, ListItem, Typography } from '@mui/material';
+import { Box, Divider, Grid, Typography } from '@mui/material';
 import CartShopping from '../CartShopping/CartShopping';
 import CartPrice from '../CartPrice/CartPrice';
 
