@@ -5,8 +5,10 @@ import WhatsAppIcon from '@mui/icons-material/WhatsApp';
 import InstagramIcon from '@mui/icons-material/Instagram';
 import TwitterIcon from '@mui/icons-material/Twitter';
 import './Footer.css'
+import { NavLink } from "react-router-dom";
 
 const Footer = () => {
+  
   return (
     <Box className='containerFooter'>
       <Container maxWidth='sx'>
@@ -30,15 +32,15 @@ const Footer = () => {
               </Typography>
             </Stack>
             <Stack spacing={2} divider={<Divider orientation="vertical" flexItem color='#00AFEF' />} direction="row" className="tipografRedes">
-              <Typography component='a' href="#" className="linkFooter">
+              <NavLink  className="linkFooter">
                 Contacto
-              </Typography>
-              <Typography component='a' href="#" className="linkFooter">
-                Dirección
-              </Typography>
-              <Typography component='a' href="#" className="linkFooter">
+              </NavLink>
+              <NavLink  to='/Help' className="linkFooter">
+                Ayuda
+              </NavLink>
+              <NavLink    className="linkFooter">
                 Nosotros
-              </Typography>
+              </NavLink>
             </Stack>
             <Typography className="copyryghtFooter">
               Copyright © 2023 Smartphone. Todos los derechos reservados.
