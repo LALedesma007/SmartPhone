@@ -6,6 +6,7 @@ import Register from "./Pages/Register"
 import Product from "./Pages/Product"
 import Shopping from "./Pages/Shopping"
 import Administrator from "./Pages/Administrator"
+import Favorite from "./Pages/Favorite"
 
 
 function App() {
@@ -17,6 +18,7 @@ function App() {
         <Route path='/Register' element={<Register/>}/>
         <Route path='/Product' element={<Product/>}/>
         <Route path='/Shopping' element={<Shopping/>}/>
+        <Route path='/Favorite' element={<Favorite/>}/>
         <Route path='/Administrator' element={<Administrator/>}/>
       </Route>
     </Routes>  

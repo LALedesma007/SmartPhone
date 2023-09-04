@@ -1,13 +1,40 @@
-import CurrencyExchangeSharpIcon from '@mui/icons-material/CurrencyExchangeSharp';
-import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
-import { Button, Card, CardActions, CardContent, CardMedia, Grid, Typography } from '@mui/material';
+import { Button, Card, CardActions, CardContent, CardMedia, Grid, IconButton, Typography } from '@mui/material';
 import { useContext } from 'react';
 import {dataContext} from '../../../context/DataContext';
+import {useSnackbar} from 'notistack';
+import CurrencyExchangeSharpIcon from '@mui/icons-material/CurrencyExchangeSharp';
+import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
+import ThumbUpIcon from '@mui/icons-material/ThumbUp';
 import SearchEmpty from '../SearchEmpty/SearchEmpty';
 
-
 const SearchListProducts = () => {
-    const {searchResults, cartResults, SetCartResults} = useContext(dataContext);
+    const {searchResults, cartResults, SetCartResults, authenticatedUser, favoriteProducts, setFavoriteProducts} = useContext(dataContext);
+    const { enqueueSnackbar } = useSnackbar();
+
+    const addToFavorites = (item) => {
+      if (authenticatedUser) {
+        const isAlreadyInFavorites = favoriteProducts.some((favItem) => favItem._id === item._id);
+  
+        if (isAlreadyInFavorites) {
+          enqueueSnackbar(`Este producto ya está en tus favoritos`, {
+            variant: 'error',
+            anchorOrigin: { vertical: 'top', horizontal: 'center' },
+          });
+        } else {
+          setFavoriteProducts([...favoriteProducts, item]);
+          enqueueSnackbar(`Agregado a favoritos: ${item.title} - ${item.model}`, {
+            variant: 'success',
+            anchorOrigin: { vertical: 'top', horizontal: 'center' },
+          });
+        }
+      } else {
+        enqueueSnackbar(`Debe iniciar sesión para agregar a favoritos`, {
+          variant: 'warning',
+          anchorOrigin: { vertical: 'top', horizontal: 'center' },
+        });
+        history.push('/login');
+      }
+    };
 
     const buySearch = (item) =>{
       SetCartResults([...cartResults, item])
@@ -33,6 +60,7 @@ const SearchListProducts = () => {
                     <Typography variant="h6" color='primary' fontWeight="fontWeightBold" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}><CurrencyExchangeSharpIcon style={{ margin: '10px' }} />{item.price}</Typography>
                     <CardActions style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                       <Button variant="contained" color='error' startIcon={<ShoppingCartIcon />} onClick={()=>buySearch(item)}>Comprar</Button>
+                      <IconButton color="warning" aria-label="add an favorite" onClick={() => addToFavorites(item)}><ThumbUpIcon fontSize="medium"/></IconButton>
                     </CardActions>
                   </Card>
                 </Grid>

@@ -20,6 +20,8 @@ const DataProvider = ({children}) => {
   const [cartResults, SetCartResults] = useState([])
   const [user, SetUser] = useState([])
   const [authenticatedUser, setAuthenticatedUser] = useState(null);
+  const [favoriteProducts, setFavoriteProducts] = useState([]);
+  const [cartFavorite, setCartFavorite ] = useState([])
 
   const getallproduct = async() =>{
     try {
@@ -91,8 +93,8 @@ const DataProvider = ({children}) => {
     }
   }, []);
 
-
-  return <dataContext.Provider value={{ data, cartPhone, setCartPhone, cartheadset, setCartHeadset, cartgamer , SetCartGamer, cartwatch , SetCartWatch, cartrandom, Setcartrandom, dataOffer, cartOffer, SetcartOffer, searchResults, SetSearchResults, cartResults, SetCartResults, user, SetUser, authenticatedUser, login, logout}}>{children}</dataContext.Provider>
+ 
+  return <dataContext.Provider value={{ data, cartPhone, setCartPhone, cartheadset, setCartHeadset, cartgamer , SetCartGamer, cartwatch , SetCartWatch, cartrandom, Setcartrandom, dataOffer, cartOffer, SetcartOffer, searchResults, SetSearchResults, cartResults, SetCartResults, user, SetUser, authenticatedUser, login, logout, favoriteProducts, setFavoriteProducts, cartFavorite, setCartFavorite}}>{children}</dataContext.Provider>
  
 }
 
