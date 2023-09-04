@@ -6,7 +6,7 @@ import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import AppRegistrationIcon from '@mui/icons-material/AppRegistration';
 import PhoneIphoneIcon from '@mui/icons-material/PhoneIphone';
 import AdminPanelSettingsIcon from '@mui/icons-material/AdminPanelSettings';
-import ExitToAppIcon from '@mui/icons-material/ExitToApp';
+import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 import { useState } from "react"
 import { useContext } from 'react';
 import { dataContext } from "../../context/DataContext";
@@ -37,6 +37,9 @@ const Navbar = () => {
               </Button>
               <Button color="inherit" variant="outlined" size="small" style={{ margin: 5, borderRadius: '50px', borderColor: '#F5811e', borderWidth: '2px' }} onClick={() => history.push('/product')} startIcon={<PhoneIphoneIcon />}>
                   Productos
+              </Button>
+              <Button color="inherit" variant="outlined" size="small" style={{ margin: 5, borderRadius: '50px', borderColor: '#F5811e', borderWidth: '2px' }} onClick={() => history.push('/favorite')} startIcon={<FavoriteBorderIcon />}>
+                  Favoritos
               </Button>
               <Button color="inherit" variant="outlined" size="small" style={{ margin: 5, borderRadius: '50px', borderColor: '#F5811e', borderWidth: '2px' }} onClick={() => history.push('/Shopping')} startIcon={<CartItems />}>
                   Carrito

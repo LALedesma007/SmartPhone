@@ -8,9 +8,9 @@ import CartCounter from '../../Cart/CartCounter/CartCounter';
 import CartEmpty from '../CartEmpty/CartEmpty';
 
 const CartShopping = () => {
-    const { cartPhone, setCartPhone, cartheadset, setCartHeadset, cartgamer , SetCartGamer, cartwatch , SetCartWatch, cartrandom, Setcartrandom, cartOffer, SetcartOffer, cartResults, SetCartResults} = useContext(dataContext);
+    const { cartPhone, setCartPhone, cartheadset, setCartHeadset, cartgamer , SetCartGamer, cartwatch , SetCartWatch, cartrandom, Setcartrandom, cartOffer, SetcartOffer, cartResults, SetCartResults, cartFavorite, setCartFavorite} = useContext(dataContext);
 
-    const allItems = [...cartgamer, ...cartheadset, ...cartPhone, ...cartrandom, ...cartwatch, ...cartOffer, ...cartResults];
+    const allItems = [...cartgamer, ...cartheadset, ...cartPhone, ...cartrandom, ...cartwatch, ...cartOffer, ...cartResults, ...cartFavorite];
     
   
     const Img = styled('img')({
@@ -80,6 +80,15 @@ const CartShopping = () => {
         return element !== productId
       })
       SetCartResults(newCart)
+    }
+
+    const deleteFavorite = (id) =>{
+      const productId = cartFavorite.find((element) => element._id === id)
+  
+      const newCart = cartFavorite.filter((element) => {
+        return element !== productId
+      })
+      setCartFavorite(newCart)
     }
   
     const isCartEmpty = allItems.length === 0;
@@ -374,6 +383,48 @@ const CartShopping = () => {
                         <Grid item xs={12} sm={6} lg={2} sx={{ marginBottom: { xs: 2 }, padding: {xs: 0.5} }}>
                           <Box display='flex' alignItems='center' height='100%' justifyContent='center'>
                             <Button variant="contained" color="success" startIcon={<DeleteIcon />} onClick={()=>deleteResults(item._id)}>Eliminar</Button>
+                          </Box>
+                        </Grid>
+                      </Grid>
+                    </Paper>
+                  </Grid>
+                ))
+              }
+            </Grid>
+            <Grid container spacing={2} marginTop={'13px'}>
+              {
+                cartFavorite.map(item => (
+                  <Grid item key={item._id} xs={12} sm={6} lg={12}>
+                    <Paper className="paper">
+                      <Grid container>
+                        <Grid item xs={12} sm={6} lg={2}>
+                          <Box sx={{ display: 'flex', justifyContent: 'center' }}>
+                            <Img src={item.image} />
+                          </Box>
+                        </Grid>
+                        <Grid item xs={12} sm={6} lg={2}>
+                          <Box display='flex' alignItems='center' height='100%' justifyContent='center'>
+                            <Typography variant="h6" className="styleaction">{item.title}</Typography>
+                          </Box>
+                        </Grid>
+                        <Grid item xs={12} sm={6} lg={2}>
+                          <Box display='flex' alignItems='center' height='100%' justifyContent='center'>
+                            <Typography variant="h7" className="styleaction">{item.model}</Typography>
+                          </Box>
+                        </Grid>
+                        <Grid item xs={12} sm={6} lg={2}>
+                          <Box display='flex' alignItems='center' height='100%' justifyContent='center'>
+                            <Typography variant="h5" color='primary' fontWeight="fontWeightBold" className="typogra"><CurrencyExchangeSharpIcon style={{ margin: '5px' }} />{item.price}</Typography>
+                          </Box>
+                        </Grid>
+                        <Grid item xs={12} sm={6} lg={2}>
+                          <Box display='flex' alignItems='center' height='100%' justifyContent='center'>
+                            <CartCounter item={item}/>
+                          </Box>
+                        </Grid>
+                        <Grid item xs={12} sm={6} lg={2} sx={{ marginBottom: { xs: 2 }, padding: {xs: 0.5} }}>
+                          <Box display='flex' alignItems='center' height='100%' justifyContent='center'>
+                            <Button variant="contained" color="success" startIcon={<DeleteIcon />} onClick={()=>deleteFavorite(item._id)}>Eliminar</Button>
                           </Box>
                         </Grid>
                       </Grid>

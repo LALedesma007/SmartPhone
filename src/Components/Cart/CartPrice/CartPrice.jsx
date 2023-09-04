@@ -3,9 +3,9 @@ import { dataContext } from '../../../context/DataContext';
 import { useContext } from 'react';
 
 const CartPrice = () => {
-  const { cartgamer, cartheadset, cartPhone, cartrandom, cartwatch, cartOffer, cartResults } = useContext(dataContext);
+  const { cartgamer, cartheadset, cartPhone, cartrandom, cartwatch, cartOffer, cartResults, cartFavorite } = useContext(dataContext);
 
-  const allItems = [...cartgamer, ...cartheadset, ...cartPhone, ...cartrandom, ...cartwatch, ...cartOffer, ...cartResults];
+  const allItems = [...cartgamer, ...cartheadset, ...cartPhone, ...cartrandom, ...cartwatch, ...cartOffer, ...cartResults, ...cartFavorite];
 
   const getTotalPrice = () => {
     let totalPrice = 0;
