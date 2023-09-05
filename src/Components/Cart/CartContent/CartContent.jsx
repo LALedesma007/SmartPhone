@@ -12,7 +12,7 @@ const CartContent = () => {
         </Typography>
         
         <Box display= 'flex' justifyContent= 'center' >
-          <img src='../../../img/CelularPortada.png'  style={{ maxWidth: "100%", height: "100%" }}/>
+          <img src='../../../img/CelularPortada.png'  alt='logo'  style={{ maxWidth: "100%", height: "100%" }}/>
         </Box>
       </Box>
     </Grid>

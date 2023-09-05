@@ -15,7 +15,7 @@ const CartEmpty =() => {
     <Grid container>
       <Grid item xs={12} sm={6} lg={2}>
         <Box sx={{ display: 'flex', justifyContent: 'center' }}>
-          <Img src="../../../../img/CartShopping.png" />
+          <Img src="../../../../img/CartShopping.png"  alt='logo' />
         </Box>
         <Box sx={{ display: 'flex', justifyContent: 'center', marginTop: '20px' }}>
           <Button variant="contained" component={Link} to='/product'>Seguir Comprando </Button>
