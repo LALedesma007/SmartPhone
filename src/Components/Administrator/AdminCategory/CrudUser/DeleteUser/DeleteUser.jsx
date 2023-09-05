@@ -1,4 +1,7 @@
 import { styled } from '@mui/material/styles';
+import { deleteUsers, getUsers } from '../../../../../service/indexUsersAdm';
+import { useEffect, useState } from 'react';
+import { Button } from '@mui/material';
 import Table from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';
 import TableCell, { tableCellClasses } from '@mui/material/TableCell';
@@ -6,9 +9,6 @@ import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
-import { deleteUsers, getUsers } from '../../../../../service/indexUsersAdm';
-import { useEffect, useState } from 'react';
-import { Button } from '@mui/material';
 
 const StyledTableCell = styled(TableCell)(({ theme }) => ({
     [`&.${tableCellClasses.head}`]: {

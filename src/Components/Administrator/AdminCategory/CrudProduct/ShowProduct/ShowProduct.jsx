@@ -1,9 +1,8 @@
 import { Paper, Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Typography, tableCellClasses } from '@mui/material'
 import React, { useEffect, useState } from 'react'
-import CurrencyExchangeSharpIcon from '@mui/icons-material/CurrencyExchangeSharp';
 import { getProducts } from '../../../../../service/indexProductsAdm';
 import { styled } from '@mui/material/styles';
-
+import CurrencyExchangeSharpIcon from '@mui/icons-material/CurrencyExchangeSharp';
 
 const StyledTableCell = styled(TableCell)(({ theme }) => ({
     [`&.${tableCellClasses.head}`]: {

@@ -1,4 +1,6 @@
 import { styled } from '@mui/material/styles';
+import { useEffect, useState } from 'react';
+import { getUsers } from '../../../../../service/indexUsersAdm'
 import Table from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';
 import TableCell, { tableCellClasses } from '@mui/material/TableCell';
@@ -6,8 +8,6 @@ import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
-import { useEffect, useState } from 'react';
-import { getUsers } from '../../../../../service/indexUsersAdm'
 
 const StyledTableCell = styled(TableCell)(({ theme }) => ({
     [`&.${tableCellClasses.head}`]: {
@@ -27,6 +27,9 @@ const StyledTableCell = styled(TableCell)(({ theme }) => ({
         width: '15%',
       },
       '&.user': {
+        width: '15%',
+      },
+      '&.role': {
         width: '15%',
       },
       '&.password': {
@@ -67,6 +70,7 @@ const ShowUser = () => {
           <StyledTableCell  align='center'>Apellido</StyledTableCell>
           <StyledTableCell  align='center'>Email</StyledTableCell>
           <StyledTableCell  align='center'>Usuario</StyledTableCell>
+          <StyledTableCell  align='center'>Rol</StyledTableCell>
           <StyledTableCell  align='center'>Contraseña</StyledTableCell>
         </TableRow>
       </TableHead>
@@ -77,6 +81,7 @@ const ShowUser = () => {
             <StyledTableCell className='lastName' align='center'>{row.lastName}</StyledTableCell>
             <StyledTableCell className='email'    align='center'>{row.email}</StyledTableCell>
             <StyledTableCell className='user'     align='center'>{row.userName}</StyledTableCell>
+            <StyledTableCell className='role'     align='center'>{row.role}</StyledTableCell>
             <StyledTableCell className='password' align='center'>{row.password}</StyledTableCell>
           </StyledTableRow>
         ))}

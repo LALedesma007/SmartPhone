@@ -1,10 +1,13 @@
 import { createContext } from "react";
-import axios from "axios";
 import { useState } from "react";
 import { useEffect } from "react";
+import { endpoints } from "../utils/endpointsConfig";
+import axios from "axios";
 
 
 export const dataContext = createContext();
+
+const BASE_URL = import.meta.env.VITE_BASE_URL
 
 const DataProvider = ({children}) => {
 
@@ -25,7 +28,7 @@ const DataProvider = ({children}) => {
 
   const getallproduct = async() =>{
     try {
-      const resp = await axios.get('https://smartphone-deploy.onrender.com/api/getproduct');  
+      const resp = await axios.get(`${BASE_URL}${endpoints.getallproduct}`);  
       setData(resp.data.getData)
     } catch (error) {
       console.log(error);
@@ -39,12 +42,13 @@ const DataProvider = ({children}) => {
 
   const getallproductOffer = async() =>{
     try {
-      const resp = await axios.get('https://smartphone-deploy.onrender.com/api/getproductoffer');  
+      const resp = await axios.get(`${BASE_URL}${endpoints.getallpoductoffer}`);  
       SetdataOffer(resp.data.getDataOffers)
     } catch (error) {
       console.log(error);
     }
   }
+
 
   useEffect(() => {
     getallproductOffer()
@@ -52,7 +56,7 @@ const DataProvider = ({children}) => {
 
   const getalluser = async() =>{
     try {
-      const resp = await axios.get('https://smartphone-deploy.onrender.com/api/getuser');  
+      const resp = await axios.get(`${BASE_URL}${endpoints.getalluser}`);  
       SetUser(resp.data.getData)
     } catch (error) {
       console.log(error);
@@ -65,7 +69,6 @@ const DataProvider = ({children}) => {
   
   const login = async (userData) => {
     try {
-      // Realiza la autenticación aquí, comparando los datos con la lista de usuarios
       const userMatch = user.find(
         (user) => user.userName === userData.userName && user.email === userData.email
       );
@@ -74,7 +77,10 @@ const DataProvider = ({children}) => {
         setAuthenticatedUser(userMatch);
         localStorage.setItem("authenticatedUser", JSON.stringify(userMatch));
       } else {
-        // Maneja la autenticación fallida
+        enqueueSnackbar("Credenciales incorrectas", {
+          variant: "error",
+          anchorOrigin: { vertical: "top", horizontal: "center" }
+        });
       }
     } catch (error) {
       console.error(error);

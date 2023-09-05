@@ -1,8 +1,8 @@
 import { Box, Button, Grid, Paper, Typography } from '@mui/material'
-import DeleteIcon from '@mui/icons-material/Delete';
-import CurrencyExchangeSharpIcon from '@mui/icons-material/CurrencyExchangeSharp';
 import { dataContext } from '../../../context/DataContext';
 import { useContext } from 'react';
+import DeleteIcon from '@mui/icons-material/Delete';
+import CurrencyExchangeSharpIcon from '@mui/icons-material/CurrencyExchangeSharp';
 import styled from '@emotion/styled';
 import CartCounter from '../../Cart/CartCounter/CartCounter';
 import CartEmpty from '../CartEmpty/CartEmpty';

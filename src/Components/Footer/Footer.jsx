@@ -1,11 +1,12 @@
 import { Box, Container, Divider, Grid, Stack, Typography } from "@mui/material"
+import { NavLink } from "react-router-dom";
 import LogoFooter from '../../../img/LogoFooter.png'
 import FacebookIcon from '@mui/icons-material/Facebook';
 import WhatsAppIcon from '@mui/icons-material/WhatsApp';
 import InstagramIcon from '@mui/icons-material/Instagram';
 import TwitterIcon from '@mui/icons-material/Twitter';
 import './Footer.css'
-import { NavLink } from "react-router-dom";
+
 
 const Footer = () => {
   
@@ -32,14 +33,8 @@ const Footer = () => {
               </Typography>
             </Stack>
             <Stack spacing={2} divider={<Divider orientation="vertical" flexItem color='#00AFEF' />} direction="row" className="tipografRedes">
-              <NavLink  className="linkFooter">
-                Contacto
-              </NavLink>
               <NavLink  to='/Help' className="linkFooter">
                 Ayuda
-              </NavLink>
-              <NavLink    className="linkFooter">
-                Nosotros
               </NavLink>
             </Stack>
             <Typography className="copyryghtFooter">

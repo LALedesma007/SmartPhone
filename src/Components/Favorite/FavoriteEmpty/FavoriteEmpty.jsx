@@ -1,17 +1,27 @@
-import { Box, Button } from '@mui/material'
+import { Box, Button, Grid } from '@mui/material'
 import { Link } from 'react-router-dom'
+import styled from '@emotion/styled';
 
 const FavoriteEmpty = () => {
+
+  const Img = styled('img')({
+    width: "100",
+    height: "15vh",
+    objectPosition: 'center',
+    margin: '3px'
+  })
+
   return (
-    <>
-    <Box sx={{display:'flex', justifyContent:'center', marginTop: 5}}> 
-      <img src="../../../../img/LogoFovorite.png" style={{width:'7%'}}/>
-      
-    </Box>
-    <Box sx={{display:'flex', justifyContent:'center', marginTop:'20px'}}>
-     <Button variant="contained" component={Link} to='/product'>Elige tus productos favoritos</Button> 
-    </Box>
-    </>
+    <Grid container>
+      <Grid item xs={12} sm={6} lg={2}>
+        <Box sx={{ display: 'flex', justifyContent: 'center' }}>
+          <Img src="../../../../img/LogoFovorite.png" />
+        </Box>
+        <Box sx={{ display: 'flex', justifyContent: 'center', marginTop: '20px' }}>
+          <Button variant="contained" component={Link} to='/product'>Elige tus productos favoritos</Button>
+        </Box>
+      </Grid>
+    </Grid>
   )
 }
 

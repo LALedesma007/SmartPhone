@@ -1,16 +1,16 @@
 import React, { useEffect, useState } from 'react'
 import { styled } from '@mui/material/styles';
-import Table from '@mui/material/Table';
-import TableBody from '@mui/material/TableBody';
 import TableCell, { tableCellClasses } from '@mui/material/TableCell';
-import TableContainer from '@mui/material/TableContainer';
-import TableHead from '@mui/material/TableHead';
-import TableRow from '@mui/material/TableRow';
-import Paper from '@mui/material/Paper';
 import { useForm } from 'react-hook-form';
 import { Alert, Button, TextField, Typography } from '@mui/material';
 import {addProductsOffers} from '../../../../../service/indexProductsOffers'
 import expressionsProducts from '../../../../../utils/expressionsproducts';
+import Table from '@mui/material/Table';
+import TableBody from '@mui/material/TableBody';
+import TableContainer from '@mui/material/TableContainer';
+import TableHead from '@mui/material/TableHead';
+import TableRow from '@mui/material/TableRow';
+import Paper from '@mui/material/Paper';
 import './AddOffer.css'
 
 const StyledTableCell = styled(TableCell)(({ theme }) => ({

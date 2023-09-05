@@ -1,15 +1,16 @@
 import { styled } from '@mui/material/styles';
+import { useEffect, useState } from 'react';
+import { Button, Typography } from '@mui/material';
+import { deleteProducts, getProducts } from '../../../../../service/indexProductsAdm';
+import TableCell, { tableCellClasses } from '@mui/material/TableCell';
 import Table from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';
-import TableCell, { tableCellClasses } from '@mui/material/TableCell';
 import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 import CurrencyExchangeSharpIcon from '@mui/icons-material/CurrencyExchangeSharp';
-import { useEffect, useState } from 'react';
-import { Button, Typography } from '@mui/material';
-import { deleteProducts, getProducts } from '../../../../../service/indexProductsAdm';
+
 
 
 const StyledTableCell = styled(TableCell)(({ theme }) => ({

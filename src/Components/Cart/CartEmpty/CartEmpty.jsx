@@ -1,17 +1,27 @@
-import { Box, Button } from '@mui/material'
+import { Box, Button, Grid } from '@mui/material'
 import { Link } from 'react-router-dom'
+import styled from '@emotion/styled';
 
 const CartEmpty =() => {
+
+  const Img = styled('img')({
+    width: "80",
+    height: "15vh",
+    objectPosition: 'center',
+    margin: '3px'
+  })
+
   return (
-    <>
-    <Box sx={{display:'flex', justifyContent:'center',}}> 
-      <img src="../../../../img/CartShopping.png" style={{width:'10%'}}/>
-      
-    </Box>
-    <Box sx={{display:'flex', justifyContent:'center', marginTop:'20px'}}>
-     <Button variant="contained" component={Link} to='/product'>Seguir Comprando </Button> 
-    </Box>
-    </>
+    <Grid container>
+      <Grid item xs={12} sm={6} lg={2}>
+        <Box sx={{ display: 'flex', justifyContent: 'center' }}>
+          <Img src="../../../../img/CartShopping.png" />
+        </Box>
+        <Box sx={{ display: 'flex', justifyContent: 'center', marginTop: '20px' }}>
+          <Button variant="contained" component={Link} to='/product'>Seguir Comprando </Button>
+        </Box>
+      </Grid>
+    </Grid>
   )
 }
 

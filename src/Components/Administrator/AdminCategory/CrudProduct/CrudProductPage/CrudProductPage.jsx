@@ -1,9 +1,9 @@
 import React from "react";
+import { Box, Typography } from "@mui/material";
 import Accordion from "@mui/material/Accordion";
 import AccordionSummary from "@mui/material/AccordionSummary";
 import AccordionDetails from "@mui/material/AccordionDetails";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
-import { Box, Typography } from "@mui/material";
 import ShowProduct from "../ShowProduct/ShowProduct";
 import AddProduct from "../AddProduct/AddProduct";
 import EditProduct from "../EditProduct/EditProduct"

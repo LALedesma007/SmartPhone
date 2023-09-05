@@ -1,16 +1,16 @@
 import React, { useEffect, useState } from 'react'
 import { styled } from '@mui/material/styles';
+import {addUsers} from '../../../../../service/indexUsersAdm.js'
+import { useForm } from 'react-hook-form';
+import { Alert, Button, TextField, Typography } from '@mui/material';
+import TableCell, { tableCellClasses } from '@mui/material/TableCell';
 import Table from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';
-import TableCell, { tableCellClasses } from '@mui/material/TableCell';
 import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
-import { useForm } from 'react-hook-form';
-import { Alert, Button, TextField, Typography } from '@mui/material';
 import expressions from '../../../../../utils/expressions';
-import {addUsers} from '../../../../../service/indexUsersAdm.js'
 import './AddUser.css'
 
 const StyledTableCell = styled(TableCell)(({ theme }) => ({
@@ -64,6 +64,7 @@ const StyledTableCell = styled(TableCell)(({ theme }) => ({
             email: data.email,
             userName: data.userName,
             password: data.password,
+            role: data.role
           }
         
           addUsers(user) 
@@ -95,6 +96,7 @@ const StyledTableCell = styled(TableCell)(({ theme }) => ({
                 <StyledTableCell align='center'>Email</StyledTableCell>
                 <StyledTableCell align='center'>Usuario</StyledTableCell>
                 <StyledTableCell align='center'>Contraseña</StyledTableCell>
+                <StyledTableCell align='center'>Rol</StyledTableCell>
                 <StyledTableCell ></StyledTableCell>
               </TableRow>
             </TableHead>
@@ -119,8 +121,11 @@ const StyledTableCell = styled(TableCell)(({ theme }) => ({
                       {errors.userName?.type === 'minLength' && <Typography className='alert'>Minimo 4 caracteres</Typography>}
                       {errors.userName?.type === 'maxLength' && <Typography className='alert'>Maximo 16 caracteres</Typography>}
                 </StyledTableCell>
+                <StyledTableCell ><TextField id="outlined-basic" label="Rol" variant="outlined" type="text" autoComplete='off' {...register("role", { required: true })} />
+                      {errors.role?.type === 'required' && <Typography className='alert'>Campos vacios</Typography>}
+                </StyledTableCell>
                 <StyledTableCell ><TextField id="outlined-basic" label="Contraseña" variant="outlined" type="text" autoComplete='off' {...register("password", { required: true, minLength: 8, maxLength: 16 ,pattern: expressions.password })} />
-                      {errors.password?.type === 'required' && <Typography className='alert'>Campos vacios</Typography> }
+                      {errors.password?.type === 'required' && <Typography className='alert'>Campos vacios</Typography>}
                       {errors.password?.type === 'minLength' && <Typography className='alert'>Minimo 8 caracteres</Typography>}
                       {errors.password?.type === 'maxLength' && <Typography className='alert'>Maximo 16 caracteres</Typography>}
                 </StyledTableCell>

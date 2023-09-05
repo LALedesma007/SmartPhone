@@ -1,16 +1,17 @@
 import { styled } from '@mui/material/styles';
-import Table from '@mui/material/Table';
-import TableBody from '@mui/material/TableBody';
 import TableCell, { tableCellClasses } from '@mui/material/TableCell';
-import TableContainer from '@mui/material/TableContainer';
-import TableHead from '@mui/material/TableHead';
-import TableRow from '@mui/material/TableRow';
-import Paper from '@mui/material/Paper';
 import { editUsers, getUserById, getUsers } from '../../../../../service/indexUsersAdm';
 import { useEffect, useState } from 'react';
 import { Button, Alert, Typography } from '@mui/material';
 import { useForm } from 'react-hook-form';
 import { TextField } from '@mui/material';
+import TableContainer from '@mui/material/TableContainer';
+import TableHead from '@mui/material/TableHead';
+import TableRow from '@mui/material/TableRow';
+import Paper from '@mui/material/Paper';
+import Table from '@mui/material/Table';
+import TableBody from '@mui/material/TableBody';
+
 import expressions from '../../../../../utils/expressions';
 
 const StyledTableCell = styled(TableCell)(({ theme }) => ({
@@ -100,6 +101,7 @@ const EditUser = () => {
               <StyledTableCell  align='center'>Nombre</StyledTableCell>
               <StyledTableCell  align='center'>Apellido</StyledTableCell>
               <StyledTableCell  align='center'>Email</StyledTableCell>
+              <StyledTableCell  align='center'>Rol</StyledTableCell>
               <StyledTableCell  align='center'>Usuario</StyledTableCell>
               <StyledTableCell  align='center'></StyledTableCell>
             </TableRow>
@@ -120,6 +122,9 @@ const EditUser = () => {
                   <StyledTableCell className='email'><TextField id="outlined-basic" label={row.email} variant="outlined" type="email" autoComplete='off' fullWidth {...register("email", { required: true, pattern: expressions.email })} />
                         {errors.email?.type === 'required' && <Typography className='alertas'>Campos Vacios</Typography>}
                         {errors.email?.type === 'pattern' && <Typography className='alertas'>Formato incorrecto</Typography>}
+                  </StyledTableCell>
+                  <StyledTableCell className='role'><TextField id="outlined-basic" label={row.role} variant="outlined" type="text" autoComplete='off' fullWidth {...register("role", { required: true })} />
+                        {errors.role?.type === 'required' && <Typography className='alertas'>Campos Vacios</Typography>}
                   </StyledTableCell>
                   <StyledTableCell ><TextField id="outlined-basic" label={row.userName} variant="outlined" type="text" autoComplete='off' {...register("userName", { required: true, minLength: 4, maxLength: 30, pattern: expressions.userName })} />
                         {errors.userName?.type === 'required' && <Typography className='alert'>Campos vacios</Typography>}
@@ -144,6 +149,7 @@ const EditUser = () => {
               <StyledTableCell  align='center'>Nombre</StyledTableCell>
               <StyledTableCell  align='center'>Apellido</StyledTableCell>
               <StyledTableCell  align='center'>Email</StyledTableCell>
+              <StyledTableCell  align='center'>Rol</StyledTableCell>
               <StyledTableCell  align='center'>Usuario</StyledTableCell>
               <StyledTableCell  align='center'></StyledTableCell>
             </TableRow>
@@ -154,6 +160,7 @@ const EditUser = () => {
                 <StyledTableCell component="th" scope="row" className='name'>{row.name}</StyledTableCell>
                 <StyledTableCell className='lastName' align='center'>{row.lastName}</StyledTableCell>
                 <StyledTableCell className='email'    align='center'>{row.email}</StyledTableCell>
+                <StyledTableCell className='role'     align='center'>{row.role}</StyledTableCell>
                 <StyledTableCell className='user'     align='center'>{row.userName}</StyledTableCell>
                 <StyledTableCell ><Button variant="contained" color="primary" onClick={()=>getOneUser(row._id)}>Editar</Button></StyledTableCell>
               </StyledTableRow>

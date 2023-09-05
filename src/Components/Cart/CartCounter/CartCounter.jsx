@@ -1,8 +1,9 @@
-import RemoveCircleSharpIcon from '@mui/icons-material/RemoveCircleSharp';
-import AddCircleSharpIcon from '@mui/icons-material/AddCircleSharp';
 import { Box, IconButton, Typography } from '@mui/material';
 import { useContext } from 'react';
 import {dataContext} from '../../../context/DataContext';
+import RemoveCircleSharpIcon from '@mui/icons-material/RemoveCircleSharp';
+import AddCircleSharpIcon from '@mui/icons-material/AddCircleSharp';
+
 
 const CartCounter = ({ item }) => {
   const { cartgamer, cartheadset, cartPhone, cartrandom, cartwatch, cartOffer, cartResults, cartFavorite, setCartPhone, setCartHeadset, SetCartGamer, SetCartWatch, Setcartrandom, SetcartOffer, SetCartResults, setCartFavorite  } = useContext(dataContext);
