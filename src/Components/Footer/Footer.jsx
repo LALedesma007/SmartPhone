@@ -1,6 +1,6 @@
 import { Box, Container, Divider, Grid, Stack, Typography } from "@mui/material"
 import { NavLink } from "react-router-dom";
-import LogoFooter from '../../../img/LogoFooter.png'
+import LogoFooter from '../../../img/LogosPages/LogoFooter.png'
 import FacebookIcon from '@mui/icons-material/Facebook';
 import WhatsAppIcon from '@mui/icons-material/WhatsApp';
 import InstagramIcon from '@mui/icons-material/Instagram';

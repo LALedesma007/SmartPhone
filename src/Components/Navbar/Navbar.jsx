@@ -11,7 +11,7 @@ import { useState } from "react"
 import { useContext } from 'react';
 import { dataContext } from "../../context/DataContext";
 import { useHistory } from "react-router-use-history";
-import LogoNavbar from '../../../img/LogoNavbar.png'
+import LogoNavbar from '../../../img/LogosPages/LogoNavbar.png'
 import CartItems from "../Cart/CartItems/CartItems";
 import Logout from "../Logout/Logout";
 import './Navbar.css'

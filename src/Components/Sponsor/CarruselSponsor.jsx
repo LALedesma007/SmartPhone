@@ -1,13 +1,13 @@
 import './CarruselSponsor.css'
-import Motorola from '../../../img/Motorola.png'
-import Garmin from '../../../img/Garmin.png'
-import Alcatel from '../../../img/Alcatel.png'
-import Play from '../../../img/PlayStation.png'
-import Nokia from '../../../img/Nokia.png'
-import Xioami from '../../../img/Xiaomi.png'
-import Apple from '../../../img/Apple.png'
-import Huawei from '../../../img/Huawei.png'
-import Samsung from '../../../img/Samsung.png'
+import Motorola from '../../../img/ImageSponsor/Motorola.png'
+import Garmin from '../../../img/ImageSponsor/Garmin.png'
+import Alcatel from '../../../img/ImageSponsor/Alcatel.png'
+import Play from '../../../img/ImageSponsor/PlayStation.png'
+import Nokia from '../../../img/ImageSponsor/Nokia.png'
+import Xioami from '../../../img/ImageSponsor/Xiaomi.png'
+import Apple from '../../../img/ImageSponsor/Apple.png'
+import Huawei from '../../../img/ImageSponsor/Huawei.png'
+import Samsung from '../../../img/ImageSponsor/Samsung.png'
 
 const CarruselSponsor = () => {
   return (

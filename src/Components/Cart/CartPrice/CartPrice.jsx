@@ -2,7 +2,7 @@ import { Box, Button, Grid, Paper, Typography, styled } from '@mui/material';
 import { dataContext } from '../../../context/DataContext';
 import { useContext } from 'react';
 import { NavLink } from 'react-router-dom';
-import LogoPrice from '../../../../img/LogoPrice.png'
+import LogoPrice from '../../../../img/LogosPages/LogoPrice.png'
 import QuizIcon from '@mui/icons-material/Quiz';
 import PointOfSaleIcon from '@mui/icons-material/PointOfSale';
 

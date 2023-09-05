@@ -1,6 +1,7 @@
 import { Box, Divider, Grid, Typography } from '@mui/material';
 import CartShopping from '../CartShopping/CartShopping';
 import CartPrice from '../CartPrice/CartPrice';
+import CelularPortada from '../../../../img/LogosPages/CelularPortada.png'
 
 const CartContent = () => {
   return (
@@ -12,7 +13,7 @@ const CartContent = () => {
         </Typography>
         
         <Box display= 'flex' justifyContent= 'center' >
-          <img src='../../../img/CelularPortada.png'  alt='logo'  style={{ maxWidth: "100%", height: "100%" }}/>
+          <img src={CelularPortada}  alt='logo'  style={{ maxWidth: "100%", height: "100%" }}/>
         </Box>
       </Box>
     </Grid>
