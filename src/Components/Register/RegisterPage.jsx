@@ -41,9 +41,9 @@ const RegisterPage = () => {
 
   return (
       <Box className='boxContainerRegister'>
-        <Grid container >
+        <Grid container sx={{justifyContent: 'center'}} >
           <Grid item xs={12} md={6} lg={4}>
-              <Box sx={{'& .MuiTextField-root': { m: 1 },}} className='conteinerRegister'>
+              <Box sx={{'& .MuiTextField-root': { m: 1 }}} className='conteinerRegister'>
                 <Typography variant='h4' className='titleRegister'>Registro</Typography>
                 <Grid container>
                   <Grid item xs={12} md={6} lg={6}>

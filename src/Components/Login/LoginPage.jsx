@@ -40,7 +40,7 @@ const LoginPage = () => {
 
   return (
     <Box className='boxContainerLogin'>
-        <Grid container>
+        <Grid container sx={{justifyContent: 'center'}}>
         <Grid item xs={12} md={6} lg={4} >
           <Box className='loginForm' >
             <Box className='conteinerLogin'>
