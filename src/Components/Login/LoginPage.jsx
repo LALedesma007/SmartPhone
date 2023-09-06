@@ -5,6 +5,7 @@ import { Box, Button, FormGroup, Grid, TextField, Typography } from '@mui/materi
 import { useSnackbar } from "notistack";
 import { useHistory } from "react-router-use-history"
 import { dataContext } from '../../context/DataContext';
+import { NavLink } from 'react-router-dom';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import EmailIcon from '@mui/icons-material/Email';
 import PatternIcon from '@mui/icons-material/Pattern';
@@ -87,9 +88,11 @@ const LoginPage = () => {
               </Button>
               </Box>
               <Box className='containerButton'> 
-              <Button variant="contained" sx={{backgroundColor: '#F5811e', marginTop:'10px'}} type="submit"  href='/Register' className='buttonLogin'>
-                Registrar
-              </Button>
+              <NavLink to='/Register'>
+                <Button variant="contained" sx={{backgroundColor: '#F5811e', marginTop:'10px'}} type="submit"  href='/Register' className='buttonLogin'>
+                  Registrar
+                </Button>
+              </NavLink>
               </Box>
             </Box>
           </Box>
