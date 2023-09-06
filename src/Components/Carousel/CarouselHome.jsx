@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Box, Button, Modal } from '@mui/material';
 import Carousel from 'react-material-ui-carousel'
-import slider from '../../helpers/slider.json'
+import slider from '../../Helpers/slider.json'
 import './CarouselHome.css'
 import ReactPlayer from 'react-player/youtube'
 
