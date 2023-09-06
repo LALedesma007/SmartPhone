@@ -4,7 +4,7 @@ import WatchIcon from '@mui/icons-material/Watch';
 import HeadsetIcon from '@mui/icons-material/Headset';
 import VideogameAssetIcon from '@mui/icons-material/VideogameAsset';
 import GamerConsole from '../Category/GamerConsole/GamerConsole';
-import HeadPhones from '../Category/HeadPhones/Headphones';
+import HeadPhones from '../Category/HeadPhones/HeadPhones';
 import RandomProducts from '../Category/RandomProducts/RandomProducts'
 import SmartPhone from '../Category/SmartPhone/SmartPhone';
 import SmartWatch from '../Category/SmartWatch/SmartWatch';
