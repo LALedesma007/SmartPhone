@@ -1,4 +1,8 @@
 import { AppBar, Box, Button, Drawer, IconButton, Toolbar} from "@mui/material"
+import { useState } from "react"
+import { useContext } from 'react';
+import { dataContext } from "../../context/DataContext";
+import { useHistory } from "react-router-use-history";
 import NavListDrawer from "./NavListDrawer"
 import MenuIcon from '@mui/icons-material/Menu';
 import RoofingIcon from '@mui/icons-material/Roofing';
@@ -7,10 +11,6 @@ import AppRegistrationIcon from '@mui/icons-material/AppRegistration';
 import PhoneIphoneIcon from '@mui/icons-material/PhoneIphone';
 import AdminPanelSettingsIcon from '@mui/icons-material/AdminPanelSettings';
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
-import { useState } from "react"
-import { useContext } from 'react';
-import { dataContext } from "../../context/DataContext";
-import { useHistory } from "react-router-use-history";
 import LogoNavbar from '../../../img/LogosPages/LogoNavbar.png'
 import CartItems from "../Cart/CartItems/CartItems";
 import Logout from "../Logout/Logout";
@@ -19,11 +19,16 @@ import './Navbar.css'
 const Navbar = () => {
 
     const [ open , setOpen ] = useState(false)
+    const [menuOpen, setMenuOpen] = useState(false);
     const history = useHistory();
     const { authenticatedUser } = useContext(dataContext);
 
     const handleMenuButtonClick = () => {
       setOpen(true);
+    };
+
+    const handleMenuClose = () => {
+      setOpen(false);
     };
   
     return (
@@ -62,8 +67,8 @@ const Navbar = () => {
         </Toolbar>
       </AppBar>
   
-      <Drawer open={open} anchor="left" sx={{ display:{ xs: 'flex', sm: 'block'} }} onClose={()=>setOpen(false)} >
-        <NavListDrawer />
+      <Drawer open={open} anchor="left" sx={{ display:{ xs: 'flex', sm: 'block'} }} onClose={handleMenuClose} >
+        <NavListDrawer onClose={handleMenuClose}  />
       </Drawer>
       </>
     )

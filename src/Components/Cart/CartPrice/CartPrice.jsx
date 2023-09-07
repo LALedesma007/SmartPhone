@@ -33,20 +33,20 @@ const CartPrice = () => {
   return (
     <>
        <Grid container spacing={0} marginTop={'13px'}>
-          <Grid item xs={12} sm={6} lg={12}>
+          <Grid item xs={12} sm={12} lg={12}>
             <Paper>
               <Grid container justifyContent={'space-between'}>
-                <Grid item xs={12} sm={6} lg={2}>
+                <Grid item xs={12} sm={4} lg={2}>
                   <Box sx={{ display: 'flex', justifyContent: 'center', }}>
                     <Img src={LogoPrice} alt='logo'/>
                   </Box>
                 </Grid>
-                <Grid item xs={12} sm={6} lg={2}>
+                <Grid item xs={12} sm={4} lg={2}>
                   <Box  display='flex' alignItems='center' height='100%' justifyContent='center'>
                   <Typography variant='h5'>Total:</Typography>
                   </Box>
                 </Grid>
-                <Grid item xs={12} sm={6} lg={2}>
+                <Grid item xs={12} sm={4} lg={2}>
                   <Box display='flex' alignItems='center' height='100%' justifyContent='center'>
                   <Typography variant='h5'>${getTotalPrice().toFixed(3)}</Typography>
                   </Box>

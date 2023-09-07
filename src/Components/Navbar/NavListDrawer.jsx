@@ -1,23 +1,24 @@
-import { Box, Divider, List, ListItem, ListItemButton, ListItemIcon, ListItemText } from "@mui/material"
+import { List, ListItem, ListItemButton, ListItemIcon, ListItemText } from "@mui/material"
+import { useHistory } from "react-router-use-history";
+import { useContext } from "react";
+import { dataContext } from "../../context/DataContext";
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import AppRegistrationIcon from '@mui/icons-material/AppRegistration';
 import PhoneIphoneIcon from '@mui/icons-material/PhoneIphone';
 import AdminPanelSettingsIcon from '@mui/icons-material/AdminPanelSettings';
 import RoofingIcon from '@mui/icons-material/Roofing';
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
-import { useHistory } from "react-router-use-history";
 import CartItems from "../Cart/CartItems/CartItems";
 import LogoutNavListDrawer from "../Logout/LogoutNavListDrawer";
-import { useContext } from "react";
-import { dataContext } from "../../context/DataContext";
 
 
-const NavListDrawer = () => {
+const NavListDrawer = ({onClose}) => {
   const history = useHistory();
   const { authenticatedUser } = useContext(dataContext);
 
   const handleListItemClick = (path) => {
     history.push(path);
+    onClose();
   };
 
   return (
