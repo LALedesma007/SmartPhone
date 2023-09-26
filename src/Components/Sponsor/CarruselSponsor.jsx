@@ -15,139 +15,139 @@ const CarruselSponsor = () => {
       <div className="slider">
         <div className="slide-track">
           <div className="slide">
-            <img className='logoSponsor' src={Motorola}/>
+            <img className='logoSponsor' src={Motorola}  alt='LogoMotorola'/>
           </div>
           <div className="slide">
-            <img className='logoSponsor' src={Garmin}/>
+            <img className='logoSponsor' src={Garmin}  alt='LogoGarmin'/>
           </div>
           <div className="slide">
-            <img className='logoSponsor' src={Alcatel}/>
+            <img className='logoSponsor' src={Alcatel}  alt='LogoAlcatel'/>
           </div>
           <div className="slide">
-            <img className='logoSponsor' src={Play}/>
+            <img className='logoSponsor' src={Play}  alt='LogoPlay'/>
           </div>
           <div className="slide">
-            <img className='logoSponsor' src={Nokia}/>
+            <img className='logoSponsor' src={Nokia}  alt='LogoNokia'/>
           </div>
           <div className="slide">
-            <img className='logoSponsor' src={Xioami}/>
+            <img className='logoSponsor' src={Xioami}  alt='LogoXiaomi'/>
           </div>
           <div className="slide">
-            <img className='logoSponsor' src={Apple}/>
+            <img className='logoSponsor' src={Apple}  alt='LogoApple'/>
           </div>
           <div className="slide">
-            <img className='logoSponsor' src={Huawei}/>
+            <img className='logoSponsor' src={Huawei}  alt='LogoHuawei'/>
           </div>
           <div className="slide">
-            <img className='logoSponsor' src={Samsung}/>
+            <img className='logoSponsor' src={Samsung}  alt='LogoSamsung'/>
           </div>
           <div className="slide">
-            <img className='logoSponsor' src={Motorola}/>
+            <img className='logoSponsor' src={Motorola}  alt='LogoMotorola'/>
           </div>
           <div className="slide">
-            <img className='logoSponsor' src={Garmin}/>
+            <img className='logoSponsor' src={Garmin}  alt='LogoGarmin'/>
           </div>
           <div className="slide">
-            <img className='logoSponsor' src={Alcatel}/>
+            <img className='logoSponsor' src={Alcatel}  alt='LogoAlcatel'/>
           </div>
           <div className="slide">
-            <img className='logoSponsor' src={Play}/>
+            <img className='logoSponsor' src={Play}  alt='LogoPlay'/>
           </div>
           <div className="slide">
-            <img className='logoSponsor' src={Nokia}/>
+            <img className='logoSponsor' src={Nokia}  alt='LogoNokia'/>
           </div>
           <div className="slide">
-            <img className='logoSponsor' src={Xioami}/>
+            <img className='logoSponsor' src={Xioami}  alt='LogoXiaomi'/>
           </div>
           <div className="slide">
-            <img className='logoSponsor' src={Apple}/>
+            <img className='logoSponsor' src={Apple}  alt='LogoApple'/>
           </div>
           <div className="slide">
-            <img className='logoSponsor' src={Huawei}/>
+            <img className='logoSponsor' src={Huawei}  alt='LogoHuawei'/>
           </div>
           <div className="slide">
-            <img className='logoSponsor' src={Samsung}/>
+            <img className='logoSponsor' src={Samsung}  alt='LogoSamsung'/>
           </div>
           <div className="slide">
-            <img className='logoSponsor' src={Motorola}/>
+            <img className='logoSponsor' src={Motorola}  alt='LogoMotorola'/>
           </div>
           <div className="slide">
-            <img className='logoSponsor' src={Garmin}/>
+            <img className='logoSponsor' src={Garmin}  alt='LogoGarmin'/>
           </div>
           <div className="slide">
-            <img className='logoSponsor' src={Alcatel}/>
+            <img className='logoSponsor' src={Alcatel}  alt='LogoAlcatel'/>
           </div>
           <div className="slide">
-            <img className='logoSponsor' src={Play}/>
+            <img className='logoSponsor' src={Play}  alt='LogoPlay'/>
           </div>
           <div className="slide">
-            <img className='logoSponsor' src={Nokia}/>
+            <img className='logoSponsor' src={Nokia}  alt='LogoNokia'/>
           </div>
           <div className="slide">
-            <img className='logoSponsor' src={Xioami}/>
+            <img className='logoSponsor' src={Xioami}  alt='LogoXiaomi'/>
           </div>
           <div className="slide">
-            <img className='logoSponsor' src={Apple}/>
+            <img className='logoSponsor' src={Apple}  alt='LogoApple'/>
           </div>
           <div className="slide">
-            <img className='logoSponsor' src={Huawei}/>
+            <img className='logoSponsor' src={Huawei}  alt='LogoHuawei'/>
           </div>
           <div className="slide">
-            <img className='logoSponsor' src={Samsung}/>
+            <img className='logoSponsor' src={Samsung}  alt='LogoSamsung'/>
           </div>
           <div className="slide">
-            <img className='logoSponsor' src={Motorola}/>
+            <img className='logoSponsor' src={Motorola}  alt='LogoMotorola'/>
           </div>
           <div className="slide">
-            <img className='logoSponsor' src={Garmin}/>
+            <img className='logoSponsor' src={Garmin}  alt='LogoGarmin'/>
           </div>
           <div className="slide">
-            <img className='logoSponsor' src={Alcatel}/>
+            <img className='logoSponsor' src={Alcatel}  alt='LogoAlcatel'/>
           </div>
           <div className="slide">
-            <img className='logoSponsor' src={Play}/>
+            <img className='logoSponsor' src={Play}  alt='LogoPlay'/>
           </div>
           <div className="slide">
-            <img className='logoSponsor' src={Nokia}/>
+            <img className='logoSponsor' src={Nokia}  alt='LogoNokia'/>
           </div>
           <div className="slide">
-            <img className='logoSponsor' src={Xioami}/>
+            <img className='logoSponsor' src={Xioami}  alt='LogoXiaomi'/>
           </div>
           <div className="slide">
-            <img className='logoSponsor' src={Apple}/>
+            <img className='logoSponsor' src={Apple}  alt='LogoApple'/>
           </div>
           <div className="slide">
-            <img className='logoSponsor' src={Huawei}/>
+            <img className='logoSponsor' src={Huawei}  alt='LogoHuawei'/>
           </div>
           <div className="slide">
-            <img className='logoSponsor' src={Samsung}/>
+            <img className='logoSponsor' src={Samsung}  alt='LogoSamsung'/>
           </div>
           <div className="slide">
-            <img className='logoSponsor' src={Motorola}/>
+            <img className='logoSponsor' src={Motorola}  alt='LogoMotorola'/>
           </div>
           <div className="slide">
-            <img className='logoSponsor' src={Garmin}/>
+            <img className='logoSponsor' src={Garmin}  alt='LogoGarmin'/>
           </div>
           <div className="slide">
-            <img className='logoSponsor' src={Alcatel}/>
+            <img className='logoSponsor' src={Alcatel}  alt='LogoAlcatel'/>
           </div>
           <div className="slide">
-            <img className='logoSponsor' src={Play}/>
+            <img className='logoSponsor' src={Play}  alt='LogoPlay'/>
           </div>
           <div className="slide">
-            <img className='logoSponsor' src={Nokia}/>
+            <img className='logoSponsor' src={Nokia}  alt='LogoNokia'/>
           </div>
           <div className="slide">
-            <img className='logoSponsor' src={Xioami}/>
+            <img className='logoSponsor' src={Xioami}  alt='LogoXiaomi'/>
           </div>
           <div className="slide">
-            <img className='logoSponsor' src={Apple}/>
+            <img className='logoSponsor' src={Apple}  alt='LogoApple'/>
           </div>
           <div className="slide">
-            <img className='logoSponsor' src={Huawei}/>
+            <img className='logoSponsor' src={Huawei}  alt='LogoHuawei'/>
           </div>
           <div className="slide">
-            <img className='logoSponsor' src={Samsung}/>
+            <img className='logoSponsor' src={Samsung}  alt='LogoSamsung'/>
           </div>
         </div>
       </div>

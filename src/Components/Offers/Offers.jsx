@@ -49,7 +49,7 @@ const Offers = () => {
             dataOffer.map(item =>(
               <Box key={item._id} className='carruselItem' >
                 <Paper className="paperOffers">
-                  <Img src={item.image}/>
+                  <Img src={item.image} alt='ImagenesProductos' />
                   <Box className="sxOffers">
                     <Typography variant="h6" className="styleaction">{item.model}</Typography>
                     <Typography variant="h7" className="styleaction">Product Description</Typography>

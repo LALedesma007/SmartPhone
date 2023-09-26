@@ -25,44 +25,44 @@ const NavListDrawer = ({onClose}) => {
     <List>
       <ListItem onClick={() => handleListItemClick('/')}>
         <ListItemIcon>
-          <RoofingIcon /> {/* Utiliza el ícono de inicio de Material-UI */}
+          <RoofingIcon />  
         </ListItemIcon>
         <ListItemText primary="Inicio" />
       </ListItem>
       <ListItem onClick={() => handleListItemClick('/product')}>
         <ListItemIcon>
-          <PhoneIphoneIcon /> {/* Utiliza el ícono de inicio de Material-UI */}
+          <PhoneIphoneIcon />  
         </ListItemIcon>
         <ListItemText primary="Productos" />
       </ListItem>
       <ListItem onClick={() => handleListItemClick('/favorite')}>
         <ListItemIcon>
-          <FavoriteBorderIcon /> {/* Utiliza el ícono de inicio de Material-UI */}
+          <FavoriteBorderIcon /> 
         </ListItemIcon>
         <ListItemText primary="Favoritos" />
       </ListItem>
       <ListItem onClick={() => handleListItemClick('/Shopping')}>
         <ListItemIcon>
-          <CartItems /> {/* Utiliza el ícono de inicio de Material-UI */}
+          <CartItems />  
         </ListItemIcon>
         <ListItemText primary="Carrito" />
       </ListItem>
       {authenticatedUser && authenticatedUser.role === 'admin' ? (
       <ListItem onClick={() => handleListItemClick('/Administrator')}>
         <ListItemIcon>
-          <AdminPanelSettingsIcon />{/* Utiliza el ícono de inicio de Material-UI */}
+          <AdminPanelSettingsIcon /> 
         </ListItemIcon>
         <ListItemText primary="Administrador" />
       </ListItem>) : null}
       <ListItem onClick={() => handleListItemClick('/login')}>
         <ListItemIcon>
-          <AccountCircleIcon /> {/* Utiliza el ícono de inicio de Material-UI */}
+          <AccountCircleIcon />  
         </ListItemIcon>
         <ListItemText primary="Acceso" />
       </ListItem>
       <ListItem onClick={() => handleListItemClick('/register')}>
         <ListItemIcon>
-          <AppRegistrationIcon /> {/* Utiliza el ícono de inicio de Material-UI */}
+          <AppRegistrationIcon /> 
         </ListItemIcon>
         <ListItemText primary="Registro" />
       </ListItem>

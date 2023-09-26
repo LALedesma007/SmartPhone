@@ -35,7 +35,7 @@ const Navbar = () => {
       <>
       <AppBar position="static" style={{ backgroundColor: '#170D42', width: '100%'}}>
         <Toolbar>
-            <img src={LogoNavbar} alt='logo' className="logonavbar"/>
+            <img src={LogoNavbar} alt='Logo' className="logonavbar"/>
             <Box sx={{ display:{ xs: 'none', sm: 'block'} }}>
               <Button color="inherit" variant="outlined" size="small" style={{ margin: 5, borderRadius: '50px', borderColor: '#F5811e', borderWidth: '2px' }} onClick={() => history.push('/')} startIcon={<RoofingIcon />}>
                   Inicio

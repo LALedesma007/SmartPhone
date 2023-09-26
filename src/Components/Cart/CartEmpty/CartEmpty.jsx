@@ -15,7 +15,7 @@ const CartEmpty =() => {
   return (
       <>
         <Box sx={{ display: 'flex', justifyContent: 'center', flexDirection: 'column', alignItems: 'center'}}>
-          <Img src={CartShopping}  alt='logo' />
+          <Img src={CartShopping}  alt='LogoCarrito' />
         </Box>
         <Box sx={{ display: 'flex', justifyContent: 'center', marginTop: '20px' }}>
           <Button variant="contained" component={Link} to='/product'>Seguir Comprando </Button>

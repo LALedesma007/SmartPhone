@@ -15,7 +15,7 @@ const FavoriteEmpty = () => {
   return (
       <>
         <Box sx={{ display: 'flex', justifyContent: 'center', flexDirection: 'column', alignItems: 'center' }}>
-          <Img src={LogoFavorite} alt='logo'/>
+          <Img src={LogoFavorite} alt='LogoFavorito'/>
         </Box>
         <Box sx={{ display: 'flex', justifyContent: 'center', marginTop: '20px' }}>
           <Button variant="contained" component={Link} to='/product'>Elige tus productos favoritos</Button>

@@ -16,7 +16,7 @@ const Footer = () => {
         <Grid container>
           <Grid item xs={12} md={12} lg={12}>
             <Stack>
-              <img src={LogoFooter} className="logoFooter" />
+              <img src={LogoFooter} alt='Logo' className="logoFooter" />
             </Stack>
             <Stack spacing={3} direction="row" className="logoRedes">
               <Typography component='a' href="https://www.facebook.com/" target="_blank" className="redesLogos">
