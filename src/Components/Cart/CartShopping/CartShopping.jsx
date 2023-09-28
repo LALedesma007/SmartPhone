@@ -100,7 +100,7 @@ const CartShopping = () => {
             <Grid container spacing={2} marginTop={'13px'}>
               {
                 cartgamer.map(item => (
-                  <Grid item key={item._id} xs={12} sm={6} lg={12}>
+                  <Grid item key={item._id} xs={12} sm={12} lg={12}>
                     <Paper className="paper">
                       <Grid container>
                         <Grid item xs={12} sm={6} lg={2}>
@@ -142,7 +142,7 @@ const CartShopping = () => {
             <Grid container spacing={2} marginTop={'13px'}>
               {
                 cartheadset.map(item => (
-                  <Grid item key={item._id} xs={12} sm={6} lg={12}>
+                  <Grid item key={item._id} xs={12} sm={12} lg={12}>
                     <Paper className="paper">
                       <Grid container>
                         <Grid item xs={12} sm={6} lg={2}>
@@ -184,7 +184,7 @@ const CartShopping = () => {
             <Grid container spacing={2} marginTop={'13px'}>
               {
                 cartPhone.map(item => (
-                  <Grid item key={item._id} xs={12} sm={6} lg={12}>
+                  <Grid item key={item._id} xs={12} sm={12} lg={12}>
                     <Paper className="paper">
                       <Grid container>
                         <Grid item xs={12} sm={6} lg={2}>
@@ -226,7 +226,7 @@ const CartShopping = () => {
             <Grid container spacing={2} marginTop={'13px'}>
               {
                 cartrandom.map(item => (
-                  <Grid item key={item._id} xs={12} sm={6} lg={12}>
+                  <Grid item key={item._id} xs={12} sm={12} lg={12}>
                     <Paper className="paper">
                       <Grid container>
                         <Grid item xs={12} sm={6} lg={2}>
@@ -268,7 +268,7 @@ const CartShopping = () => {
             <Grid container spacing={2} marginTop={'13px'}>
               {
                 cartwatch.map(item => (
-                  <Grid item key={item._id} xs={12} sm={6} lg={12}>
+                  <Grid item key={item._id} xs={12} sm={12} lg={12}>
                     <Paper className="paper">
                       <Grid container>
                         <Grid item xs={12} sm={6} lg={2}>
@@ -310,7 +310,7 @@ const CartShopping = () => {
             <Grid container spacing={2} marginTop={'13px'}>
               {
                 cartOffer.map(item => (
-                  <Grid item key={item._id} xs={12} sm={6} lg={12}>
+                  <Grid item key={item._id} xs={12} sm={12} lg={12}>
                     <Paper className="paper">
                       <Grid container>
                         <Grid item xs={12} sm={6} lg={2}>
@@ -352,7 +352,7 @@ const CartShopping = () => {
             <Grid container spacing={2} marginTop={'13px'}>
               {
                 cartResults.map(item => (
-                  <Grid item key={item._id} xs={12} sm={6} lg={12}>
+                  <Grid item key={item._id} xs={12} sm={12} lg={12}>
                     <Paper className="paper">
                       <Grid container>
                         <Grid item xs={12} sm={6} lg={2}>
@@ -394,7 +394,7 @@ const CartShopping = () => {
             <Grid container spacing={2} marginTop={'13px'}>
               {
                 cartFavorite.map(item => (
-                  <Grid item key={item._id} xs={12} sm={6} lg={12}>
+                  <Grid item key={item._id} xs={12} sm={12} lg={12}>
                     <Paper className="paper">
                       <Grid container>
                         <Grid item xs={12} sm={6} lg={2}>
