@@ -84,7 +84,7 @@ const EditProduct = () => {
   const editOneProd =async (datas) => {
     const id = (prodById.map(prod => prod._id))
     editProducts(id, datas)
-    reset()
+    reset();
     setSuccessMessage('Producto editado exitosamente');
   }
 
@@ -118,33 +118,33 @@ const EditProduct = () => {
           <TableBody>
             {prodById.map((row) =>(
                 <StyledTableRow key={row._id}>
-                  <StyledTableCell><TextField id="outlined-basic" label={row.title} variant="outlined" type="text" autoComplete='off' {...register("title", { required: true, minLength: 3, maxLength: 40, pattern: expressionsProducts.title })} />
+                  <StyledTableCell><TextField id="outlined-basic" defaultValue={row.title} variant="outlined" type="text" {...register("title", { required: true, minLength: 3, maxLength: 40, pattern: expressionsProducts.title })}  />
                       {errors.title?.type === 'required' && <Typography className='alert'>Campos vacios</Typography>}
                       {errors.title?.type === 'minLength' && <Typography className='alert'>Minimo 3 caracteres</Typography>}
                       {errors.title?.type === 'maxLength' && <Typography className='alert'>Maximo 40 caracteres</Typography>}  
                   </StyledTableCell>
-                  <StyledTableCell><TextField id="outlined-basic" label={row.model} variant="outlined" type="text" autoComplete='off'{...register("model", { required: true, minLength: 3, maxLength: 40, pattern: expressionsProducts.model })} />
+                  <StyledTableCell><TextField id="outlined-basic" defaultValue={row.model} variant="outlined" type="text" {...register("model", { required: true, minLength: 3, maxLength: 40, pattern: expressionsProducts.model })} />
                       {errors.model?.type === 'required' && <Typography className='alertas'>Campos Vacios</Typography>}
                       {errors.model?.type === 'minLength' && <Typography className='alert'>Minimo 3 caracteres</Typography>}
                       {errors.model?.type === 'maxLength' && <Typography className='alert'>Maximo 40 caracteres</Typography>}
                   </StyledTableCell>
-                  <StyledTableCell><TextField id="outlined-basic" label={row.description} variant="outlined" type="text" autoComplete='off' {...register("description", { required: true, minLength: 3, maxLength: 500, pattern: expressionsProducts.description })} />
+                  <StyledTableCell><TextField id="outlined-basic" defaultValue={row.description} variant="outlined" type="text" {...register("description", { required: true, minLength: 3, maxLength: 500, pattern: expressionsProducts.description })} />
                       {errors.description?.type === 'required' && <Typography className='alert'>Campos vacios</Typography>}
                       {errors.description?.type === 'minLength' && <Typography className='alert'>Minimo 3 caracteres</Typography>}
                       {errors.description?.type === 'maxLength' && <Typography className='alert'>Maximo 500 caracteres</Typography>}
                   </StyledTableCell>
-                  <StyledTableCell><TextField id="outlined-basic" label={row.price} variant="outlined" type="text" autoComplete='off' {...register("price", { required: true,  minLength: 1, maxLength: 9, pattern: expressionsProducts.price })} />
+                  <StyledTableCell><TextField id="outlined-basic" defaultValue={row.price} variant="outlined" type="text" {...register("price", { required: true,  minLength: 1, maxLength: 9, pattern: expressionsProducts.price })} />
                       {errors.price?.type === 'required' && <Typography className='alert'>Campos vacios</Typography> }
                       {errors.price?.type === 'minLength' && <Typography className='alert'>Minimo 1 caracteres</Typography>}
                       {errors.price?.type === 'maxLength' && <Typography className='alert'>Maximo 9 caracteres</Typography>}
                   </StyledTableCell>
-                  <StyledTableCell><TextField id="outlined-basic" label={row.quanty} variant="outlined" type="text" autoComplete='off' {...register("quanty", { required: true })} />
+                  <StyledTableCell><TextField id="outlined-basic" defaultValue={row.quanty} variant="outlined" type="text"  {...register("quanty", { required: true })} />
                       {errors.quanty?.type === 'required' && <Typography className='alert'>Campos vacios</Typography> }
                   </StyledTableCell>
-                  <StyledTableCell><TextField id="outlined-basic" label={row.category} variant="outlined" type="text" autoComplete='off' {...register("category", { required: true })} />
+                  <StyledTableCell><TextField id="outlined-basic" defaultValue={row.category} variant="outlined" type="text"  {...register("category", { required: true })} />
                       {errors.category?.type === 'required' && <Typography className='alert'>Campos vacios</Typography> }
                   </StyledTableCell>
-                  <StyledTableCell><TextField id="outlined-basic" label={row.image} variant="outlined" type="text" autoComplete='off'{...register("image", { required: true })} />
+                  <StyledTableCell><TextField id="outlined-basic" defaultValue={row.image} variant="outlined" type="text" {...register("image", { required: true })} />
                       {errors.image?.type === 'required' && <Typography className='alert'>Campos vacios</Typography>}
                   </StyledTableCell>
                   <StyledTableCell >
