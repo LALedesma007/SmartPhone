@@ -19,18 +19,18 @@ const StyledTableCell = styled(TableCell)(({ theme }) => ({
       fontSize: 14,
     },
     '&.name': {
-        width: '15%',
+        width: '20%',
       },
       '&.lastName': {
-        width: '15%',
+        width: '20%',
       },
       '&.email': {
-        width: '15%',
+        width: '20%',
       },
       '&.user': {
-        width: '15%',
+        width: '20%',
       },
-      '&.password': {
+      '&.rol': {
         width: '15%',
       },
   }));
@@ -81,7 +81,7 @@ const DeleteUser = () => {
           <StyledTableCell  align='center'>Apellido</StyledTableCell>
           <StyledTableCell  align='center'>Email</StyledTableCell>
           <StyledTableCell  align='center'>Usuario</StyledTableCell>
-          <StyledTableCell  align='center'>Contraseña</StyledTableCell>
+          <StyledTableCell  align='center'>Rol</StyledTableCell>
           <StyledTableCell  align='center'></StyledTableCell>
         </TableRow>
       </TableHead>
@@ -92,7 +92,7 @@ const DeleteUser = () => {
             <StyledTableCell className='lastName' align='center'>{row.lastName}</StyledTableCell>
             <StyledTableCell className='email'    align='center'>{row.email}</StyledTableCell>
             <StyledTableCell className='user'     align='center'>{row.userName}</StyledTableCell>
-            <StyledTableCell className='password' align='center'>{row.password}</StyledTableCell>
+            <StyledTableCell className='rol'      align='center'>{row.role}</StyledTableCell>
             <StyledTableCell ><Button variant="contained" color='error' onClick={()=>deleteOneUser(row._id)}>Eliminar</Button></StyledTableCell>
           </StyledTableRow>
         ))}

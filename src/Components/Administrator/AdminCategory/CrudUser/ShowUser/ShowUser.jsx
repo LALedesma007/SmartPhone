@@ -71,7 +71,6 @@ const ShowUser = () => {
           <StyledTableCell  align='center'>Email</StyledTableCell>
           <StyledTableCell  align='center'>Usuario</StyledTableCell>
           <StyledTableCell  align='center'>Rol</StyledTableCell>
-          <StyledTableCell  align='center'>Contraseña</StyledTableCell>
         </TableRow>
       </TableHead>
       <TableBody>
@@ -82,7 +81,6 @@ const ShowUser = () => {
             <StyledTableCell className='email'    align='center'>{row.email}</StyledTableCell>
             <StyledTableCell className='user'     align='center'>{row.userName}</StyledTableCell>
             <StyledTableCell className='role'     align='center'>{row.role}</StyledTableCell>
-            <StyledTableCell className='password' align='center'>{row.password}</StyledTableCell>
           </StyledTableRow>
         ))}
       </TableBody>
