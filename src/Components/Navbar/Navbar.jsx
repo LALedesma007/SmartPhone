@@ -59,7 +59,7 @@ const Navbar = () => {
               <Button color="inherit" variant="outlined" size="small" style={{ margin: 5, borderRadius: '50px', borderColor: '#F5811e', borderWidth: '2px' }} onClick={() => history.push('/register')} startIcon={<AppRegistrationIcon />}>
                   Registro
               </Button>
-              <Logout/>
+              {authenticatedUser && ( authenticatedUser.role === 'admin' || authenticatedUser.role === 'user') ? ( <Logout/> ) : null}
             </Box>
           <IconButton color="inherit" size="large" sx={{ display:{ xs: 'flex', sm: 'none'} }} onClick={()=> setOpen(true)}>
              <MenuIcon />
