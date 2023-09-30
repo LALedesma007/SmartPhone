@@ -55,7 +55,7 @@ const LoginPage = () => {
                   })} />
                 </Box>  
                   {errors.userName?.type === 'required' && <p className='alertas'>Campos Vacios</p>}
-                  {errors.userName?.type === 'pattern'  && <p className='alertas'>Formato incorrecto</p>}
+                  {errors.userName?.type === 'pattern'  && <p className='alertas'>Formato Incorrecto</p>}
               </FormGroup>
 
               <FormGroup className='formLogin' controlid="formBasicEmail">
@@ -67,7 +67,7 @@ const LoginPage = () => {
                   })} />
                 </Box>  
                   {errors.email?.type === 'required' && <p className='alertas'>Campos Vacios</p>}
-                  {errors.email?.type === 'pattern'  && <p className='alertas'>Formato incorrecto</p>}   
+                  {errors.email?.type === 'pattern'  && <p className='alertas'>Formato Incorrecto</p>}   
               </FormGroup>
 
               <FormGroup className='formLogin' controlid="formBasicPassword">
@@ -79,7 +79,7 @@ const LoginPage = () => {
                 })} />
               </Box>  
                 {errors.password?.type === 'required' && <p className='alertas'>Campos Vacios</p>}
-                {errors.password?.type === 'pattern'  && <p className='alertas'>Contraseña incorrecta</p>}
+                {errors.password?.type === 'pattern'  && <p className='alertas'>Campos Incorrectos</p>}
               </FormGroup>   
 
               <Box className='containerButton'>
