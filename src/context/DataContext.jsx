@@ -74,8 +74,10 @@ const DataProvider = ({children}) => {
       );
 
       if (userMatch) {
+        const userWithoutPassword = { ...userMatch };
+        delete userWithoutPassword.password;
         setAuthenticatedUser(userMatch);
-        localStorage.setItem("authenticatedUser", JSON.stringify(userMatch));
+        localStorage.setItem("authenticatedUser", JSON.stringify(userWithoutPassword));
       } else {
         enqueueSnackbar("Credenciales incorrectas", {
           variant: "error",

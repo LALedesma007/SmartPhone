@@ -1,18 +1,22 @@
 import React from 'react'
 import { useForm } from 'react-hook-form';
-import expressions from '../../utils/expressions';
 import { addUsers } from '../../service/indexUsers';
 import { Box, Button, FormGroup, Grid, TextField, Typography } from '@mui/material';
-import './RegisterPage.css'
+import { useHistory } from "react-router-use-history"
+import { useSnackbar } from "notistack";
+import expressions from '../../utils/expressions';
 import PatternIcon from '@mui/icons-material/Pattern';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import EmailIcon from '@mui/icons-material/Email';
 import BadgeIcon from '@mui/icons-material/Badge';
 import BorderColorIcon from '@mui/icons-material/BorderColor';
+import './RegisterPage.css'
 
 const RegisterPage = () => {
 
   const {register, getValues, formState: { errors }, reset,  handleSubmit} = useForm();
+  const history = useHistory();
+  const { enqueueSnackbar } = useSnackbar()
 
 
   const onSubmit = async(data) => {
@@ -25,13 +29,12 @@ const RegisterPage = () => {
       password: data.password,
     }
 
-    const resp = await addUsers(user)
-     console.log(resp); 
+    const resp = await addUsers(user) 
      if (resp === undefined) {
-      alert('Usuario ya registrado')
+      enqueueSnackbar(`Usuario ya registrado`, { variant: "error", anchorOrigin: { vertical: "top", horizontal: "center", } });
      }else{
-      alert('Usuario registrado')
-      reset()
+      enqueueSnackbar(`Usuario registrado`, { variant: "success", anchorOrigin: { vertical: "top", horizontal: "center", } });
+      history.push("/login")
      }
    } catch (error) {
      console.error(err.message);

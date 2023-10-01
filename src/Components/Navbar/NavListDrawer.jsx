@@ -54,6 +54,8 @@ const NavListDrawer = ({onClose}) => {
         </ListItemIcon>
         <ListItemText primary="Administrador" />
       </ListItem>) : null}
+      {authenticatedUser ? null : (
+        <>
       <ListItem onClick={() => handleListItemClick('/login')}>
         <ListItemIcon>
           <AccountCircleIcon />  
@@ -66,7 +68,8 @@ const NavListDrawer = ({onClose}) => {
         </ListItemIcon>
         <ListItemText primary="Registro" />
       </ListItem>
-      <LogoutNavListDrawer/>
+      </>)}
+      {authenticatedUser && ( authenticatedUser.role === 'admin' || authenticatedUser.role === 'user') ? ( <LogoutNavListDrawer/> ) : null}
     </List>
   );
 }
