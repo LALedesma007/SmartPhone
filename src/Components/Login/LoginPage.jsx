@@ -23,14 +23,16 @@ const LoginPage = () => {
       let user = {
         userName: data.userName,
         email: data.email,
+        password: data.password,
       }
+      
       const userOne = await getUser(user)
       if (userOne === undefined) {
         enqueueSnackbar(`Acceso denegado ${user.userName}`, { variant: "error", anchorOrigin: { vertical: "top", horizontal: "center", } });
         reset()
       } else {
         login(user);
-        localStorage.setItem("userlog", JSON.stringify({ user }))
+        //localStorage.setItem("userlog", JSON.stringify({ user }))
         enqueueSnackbar(`Bienvenido ${user.userName}`, { variant: "success", anchorOrigin: { vertical: "top", horizontal: "center", } });
         history.push("/")
       }

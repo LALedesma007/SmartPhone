@@ -3,6 +3,7 @@ import { useState } from "react";
 import { useEffect } from "react";
 import { endpoints } from "../utils/endpointsConfig";
 import axios from "axios";
+import { enqueueSnackbar } from "notistack";
 
 
 export const dataContext = createContext();
@@ -70,7 +71,7 @@ const DataProvider = ({children}) => {
   const login = async (userData) => {
     try {
       const userMatch = user.find(
-        (user) => user.userName === userData.userName && user.email === userData.email
+        (user) => user.userName === userData.userName && user.email === userData.email 
       );
 
       if (userMatch) {
