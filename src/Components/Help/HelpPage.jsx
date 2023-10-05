@@ -35,12 +35,12 @@ const HelpPage = () => {
   const form = useRef();
   const serviceId = import.meta.env.VITE_REACT_APP_EMAILJS_SERVICE_ID;
   const templateId = import.meta.env.VITE_REACT_APP_EMAILJS_TEMPLATE_ID;
-  const userId = import.meta.env.VITE_REACT_APP_EMAILJS_USER_ID;
+  const publicKey = import.meta.env.VITE_REACT_APP_EMAILJS_PUBLIC_KEY;
 
   const sendEmail = (e) => {
     e.preventDefault();
 
-    emailjs.sendForm(serviceId, templateId, form.current,  userId)
+    emailjs.sendForm(serviceId, templateId, form.current, publicKey)
       .then(() => {
         enqueueSnackbar(`Correo enviado`, { variant: "success", anchorOrigin: { vertical: "top", horizontal: "center", } });
         form.current.reset();
