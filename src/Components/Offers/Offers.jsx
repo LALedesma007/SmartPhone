@@ -38,7 +38,7 @@ const Offers = () => {
   return (
     <>
     <Box>
-    <Typography variant="h5" style={{ marginTop:'20px', marginBottom: '20px'}} >   
+    <Typography variant="h5" style={{ marginTop:'20px', marginBottom: '20px', fontWeight: "bold"}} >   
       <Divider textAlign="left">Ofertas Imperdibles</Divider>
     </Typography>
     </Box>

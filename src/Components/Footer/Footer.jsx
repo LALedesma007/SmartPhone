@@ -1,5 +1,5 @@
-import { Box, Container, Divider, Grid, Stack, Typography } from "@mui/material"
-import { NavLink } from "react-router-dom";
+import { Box, Button, Container, Divider, Grid, Stack, Typography } from "@mui/material"
+import { Link, NavLink } from "react-router-dom";
 import LogoFooter from '../../../img/LogosPages/LogoFooter.png'
 import FacebookIcon from '@mui/icons-material/Facebook';
 import WhatsAppIcon from '@mui/icons-material/WhatsApp';
@@ -15,8 +15,12 @@ const Footer = () => {
       <Container maxWidth='sx'>
         <Grid container>
           <Grid item xs={12} md={12} lg={12}>
-            <Stack>
-              <img src={LogoFooter} alt='Logo' className="logoFooter" />
+            <Stack textAlign={'center'}>
+              <Link to="/">
+                <Button variant="text">
+                  <img src={LogoFooter} alt='Logo' className="logoFooter" />
+                </Button>
+              </Link>
             </Stack>
             <Stack spacing={3} direction="row" className="logoRedes">
               <Typography component='a' href="https://www.facebook.com/" target="_blank" className="redesLogos">

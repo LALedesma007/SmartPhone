@@ -17,9 +17,9 @@ const AdminPage = () => {
 
   return (
     <Grid container >
-    <Grid className='boxCategory' item xs={6} lg={2.5}> 
+    <Grid className='boxCategory' item xs={6} lg={2}> 
       <Box margin={1}>
-        <Typography variant="h6" style={{ marginTop: "20px", marginBottom: "20px" }}>
+        <Typography variant="h6" style={{ marginTop: "20px", marginBottom: "20px", fontWeight: "bold" }}>
           <Divider textAlign="center">Categorias</Divider>
         </Typography>
         <ListItem style={{ justifyContent: "start" }}>
@@ -40,9 +40,9 @@ const AdminPage = () => {
       </Box>
     </Grid>
     
-  <Grid item xs={6} lg={9.5}>
+  <Grid item xs={6} lg={10}>
     <Box margin={1}>
-      <Typography variant="h6" style={{ marginTop: "20px", marginBottom: "20px" }}>
+      <Typography variant="h6" style={{ marginTop: "20px", marginBottom: "20px", fontWeight: "bold" }}>
         <Divider textAlign="center">Bienvenido</Divider>
       </Typography>
     </Box>

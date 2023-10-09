@@ -95,8 +95,8 @@ const StyledTableCell = styled(TableCell)(({ theme }) => ({
                 <StyledTableCell align='center'>Apellido</StyledTableCell>
                 <StyledTableCell align='center'>Email</StyledTableCell>
                 <StyledTableCell align='center'>Usuario</StyledTableCell>
-                <StyledTableCell align='center'>Contraseña</StyledTableCell>
                 <StyledTableCell align='center'>Rol</StyledTableCell>
+                <StyledTableCell align='center'>Contraseña</StyledTableCell>
                 <StyledTableCell ></StyledTableCell>
               </TableRow>
             </TableHead>

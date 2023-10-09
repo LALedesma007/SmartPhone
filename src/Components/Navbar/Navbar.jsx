@@ -15,6 +15,7 @@ import LogoNavbar from '../../../img/LogosPages/LogoNavbar.png'
 import CartItems from "../Cart/CartItems/CartItems";
 import Logout from "../Logout/Logout";
 import './Navbar.css'
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
 
@@ -35,40 +36,47 @@ const Navbar = () => {
       <>
       <AppBar position="static" style={{ backgroundColor: '#170D42', width: '100%'}}>
         <Toolbar>
-            <img src={LogoNavbar} alt='Logo' className="logonavbar"/>
-            <Box sx={{ display:{ xs: 'none', sm: 'block'} }}>
-              <Button color="inherit" variant="outlined" size="small" style={{ margin: 5, borderRadius: '50px', borderColor: '#F5811e', borderWidth: '2px' }} onClick={() => history.push('/')} startIcon={<RoofingIcon />}>
-                  Inicio
-              </Button>
-              <Button color="inherit" variant="outlined" size="small" style={{ margin: 5, borderRadius: '50px', borderColor: '#F5811e', borderWidth: '2px' }} onClick={() => history.push('/product')} startIcon={<PhoneIphoneIcon />}>
-                  Productos
-              </Button>
-              <Button color="inherit" variant="outlined" size="small" style={{ margin: 5, borderRadius: '50px', borderColor: '#F5811e', borderWidth: '2px' }} onClick={() => history.push('/favorite')} startIcon={<FavoriteBorderIcon />}>
-                  Favoritos
-              </Button>
-              <Button color="inherit" variant="outlined" size="small" style={{ margin: 5, borderRadius: '50px', borderColor: '#F5811e', borderWidth: '2px' }} onClick={() => history.push('/Shopping')} startIcon={<CartItems />}>
-                  Carrito
-              </Button>
-              {authenticatedUser && authenticatedUser.role === 'admin' ? (
-              <Button color="inherit" variant="outlined" size="small" style={{ margin: 5, borderRadius: '50px', borderColor: '#F5811e', borderWidth: '2px' }} onClick={() => history.push('/Administrator')} startIcon={<AdminPanelSettingsIcon />}>
-                  Administrador
-              </Button>) : null}
-              {authenticatedUser ? null : (
-              <>
-              <Button color="inherit" variant="outlined" size="small" style={{ margin: 5, borderRadius: '50px', borderColor: '#F5811e', borderWidth: '2px' }} onClick={() => history.push('/login')} startIcon={<AccountCircleIcon />}>
-                  Acceso
-              </Button>
-              <Button color="inherit" variant="outlined" size="small" style={{ margin: 5, borderRadius: '50px', borderColor: '#F5811e', borderWidth: '2px' }} onClick={() => history.push('/register')} startIcon={<AppRegistrationIcon />}>
-                  Registro
-              </Button>
-              </>)}
-              {authenticatedUser && ( authenticatedUser.role === 'admin' || authenticatedUser.role === 'user') ? ( <Logout/> ) : null}
-            </Box>
+          <Box flexGrow={1}>
+              <Link to="/">
+                <Button variant="text">
+                  <img src={LogoNavbar} alt='Logo' className="logonavbar"/>
+                </Button>
+              </Link>
+          </Box>
+      
+          <Box sx={{ display:{ xs: 'none', sm: 'block'}}}>
+            <Button color="inherit" variant="outlined" size="small" style={{ margin: 5, borderRadius: '50px', borderColor: '#F5811e', borderWidth: '2px' }} onClick={() => history.push('/')} startIcon={<RoofingIcon />}>
+                Inicio
+            </Button>
+            <Button color="inherit" variant="outlined" size="small" style={{ margin: 5, borderRadius: '50px', borderColor: '#F5811e', borderWidth: '2px' }} onClick={() => history.push('/product')} startIcon={<PhoneIphoneIcon />}>
+                Productos
+            </Button>
+            <Button color="inherit" variant="outlined" size="small" style={{ margin: 5, borderRadius: '50px', borderColor: '#F5811e', borderWidth: '2px' }} onClick={() => history.push('/favorite')} startIcon={<FavoriteBorderIcon />}>
+                Favoritos
+            </Button>
+            <Button color="inherit" variant="outlined" size="small" style={{ margin: 5, borderRadius: '50px', borderColor: '#F5811e', borderWidth: '2px' }} onClick={() => history.push('/Shopping')} startIcon={<CartItems />}>
+                Carrito
+            </Button>
+            {authenticatedUser && authenticatedUser.role === 'admin' ? (
+            <Button color="inherit" variant="outlined" size="small" style={{ margin: 5, borderRadius: '50px', borderColor: '#F5811e', borderWidth: '2px' }} onClick={() => history.push('/Administrator')} startIcon={<AdminPanelSettingsIcon />}>
+                Administrador
+            </Button>) : null}
+            {authenticatedUser ? null : (
+            <>
+            <Button color="inherit" variant="outlined" size="small" style={{ margin: 5, borderRadius: '50px', borderColor: '#F5811e', borderWidth: '2px' }} onClick={() => history.push('/login')} startIcon={<AccountCircleIcon />}>
+                Acceso
+            </Button>
+            <Button color="inherit" variant="outlined" size="small" style={{ margin: 5, borderRadius: '50px', borderColor: '#F5811e', borderWidth: '2px' }} onClick={() => history.push('/register')} startIcon={<AppRegistrationIcon />}>
+                Registro
+            </Button>
+            </>)}
+            {authenticatedUser && ( authenticatedUser.role === 'admin' || authenticatedUser.role === 'user') ? ( <Logout/> ) : null}
+          </Box>
           <IconButton color="inherit" size="large" sx={{ display:{ xs: 'flex', sm: 'none'} }} onClick={()=> setOpen(true)}>
-             <MenuIcon />
+              <MenuIcon />
           </IconButton>
         </Toolbar>
-      </AppBar>
+       </AppBar>
   
       <Drawer open={open} anchor="left" sx={{ display:{ xs: 'flex', sm: 'block'} }} onClose={handleMenuClose} >
         <NavListDrawer onClose={handleMenuClose}  />

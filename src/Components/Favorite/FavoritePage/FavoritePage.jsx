@@ -28,7 +28,7 @@ const FavoritePage = () => {
 
   return (
     <>
-    <Typography variant="h6" style={{ marginTop: "20px", marginBottom: "10px" }}>
+    <Typography variant="h6" style={{ marginTop: "20px", marginBottom: "10px", fontWeight: "bold" }}>
           <Divider textAlign="center">Favoritos</Divider>
     </Typography>
     {favoriteProducts.length === 0 ? (<FavoriteEmpty/>) : (
