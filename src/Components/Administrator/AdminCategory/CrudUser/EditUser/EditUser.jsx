@@ -64,7 +64,7 @@ const EditUser = () => {
 
   useEffect(() => {
   getAddUsers()
-  }, [addUsers])
+  }, [])
 
   const getOneUser =  async(_id) => {
     const { data } = await getUserById(_id)

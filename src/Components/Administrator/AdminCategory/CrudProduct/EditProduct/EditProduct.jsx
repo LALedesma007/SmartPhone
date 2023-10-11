@@ -73,7 +73,7 @@ const EditProduct = () => {
 
   useEffect(() => {
     getAllProd()
-  }, [allProd])
+  }, [])
 
   const getOneProd =  async(_id) => {
     const { data } = await getProductsById(_id)

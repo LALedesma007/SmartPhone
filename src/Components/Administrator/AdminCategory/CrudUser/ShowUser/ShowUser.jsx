@@ -59,7 +59,7 @@ const ShowUser = () => {
 
   useEffect(() => {
   getAddUsers()
-  }, [addUsers])
+  }, [])
 
   return (
     <TableContainer component={Paper}>

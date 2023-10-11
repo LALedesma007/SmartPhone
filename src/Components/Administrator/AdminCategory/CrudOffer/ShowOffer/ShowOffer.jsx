@@ -60,7 +60,7 @@ const ShowOffer = () => {
 
   useEffect(() => {
     getAllOffer()
-  }, [allOffer])
+  }, [])
 
   return (
     <TableContainer component={Paper}>

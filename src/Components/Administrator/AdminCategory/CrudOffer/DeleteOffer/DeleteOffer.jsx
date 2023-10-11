@@ -65,7 +65,7 @@ const DeleteOffer = () => {
     
       useEffect(() => {
         getAllOffer()
-      }, [allOffer])
+      }, [])
     
     const deleteOneOffer = async(_id) => {
       try {    

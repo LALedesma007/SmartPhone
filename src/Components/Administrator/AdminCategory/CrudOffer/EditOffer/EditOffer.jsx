@@ -74,7 +74,7 @@ const EditOffer = () => {
 
   useEffect(() => {
     getAllOffer()
-  }, [allOffer])
+  }, [])
 
   const getOneOffer =  async(_id) => {
     const { data } = await getProductsOffersById(_id)

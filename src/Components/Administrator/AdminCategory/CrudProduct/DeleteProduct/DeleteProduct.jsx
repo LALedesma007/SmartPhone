@@ -68,7 +68,7 @@ const DeleteProduct = () => {
     
       useEffect(() => {
         getAllProd()
-      }, [allProd])
+      }, [])
     
     const deleteOneProd = async(_id) => {
       try {    

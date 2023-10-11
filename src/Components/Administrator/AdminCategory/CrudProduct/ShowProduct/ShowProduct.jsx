@@ -59,7 +59,7 @@ const ShowProduct = () => {
 
   useEffect(() => {
     getAllProduct()
-  }, [allProduct])
+  }, [])
 
   return (
     <TableContainer component={Paper}>
